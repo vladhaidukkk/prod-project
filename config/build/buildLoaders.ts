@@ -11,7 +11,19 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 
   const sassLoader: RuleSetRule = {
     test: /\.s[ac]ss$/,
-    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+    use: [
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            auto: /\.module\./,
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:8]' : '[hash:base64:8]',
+          },
+        },
+      },
+      'sass-loader',
+    ],
   };
 
   return [typescriptLoader, sassLoader];
