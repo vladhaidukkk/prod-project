@@ -20,7 +20,7 @@ export function buildConfig(options: BuildOptions): Configuration {
     devServer: isDev ? buildDevServer(options) : undefined,
     resolve: buildResolve(),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     plugins: buildPlugins(options),
   };

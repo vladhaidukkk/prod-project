@@ -8,7 +8,7 @@ export default (env: BuildEnv) => {
   const port: BuildPort = env.port ?? 3000;
 
   const paths: BuildPaths = {
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: path.resolve(__dirname, 'dist'),
     html: path.resolve(__dirname, 'public', 'index.html'),
   };
