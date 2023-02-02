@@ -4,6 +4,7 @@
     "jsx": "react",
     "module": "ESNext",
     "moduleResolution": "node",
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
