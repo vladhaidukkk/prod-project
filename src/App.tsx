@@ -4,12 +4,13 @@ import './styles/index.scss';
 import { MainPageAsync } from './pages/MainPage';
 import { AboutPageAsync } from './pages/AboutPage';
 import { useTheme } from './theme';
+import { cn } from './helpers/cn';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={cn('app', {}, [theme])}>
       <nav>
         <Link to="/">Main</Link>
         <Link to="/about">About</Link>
