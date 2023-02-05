@@ -18,7 +18,7 @@ export function buildConfig(options: BuildOptions): Configuration {
     },
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
-    resolve: buildResolve(),
+    resolve: buildResolve(options),
     module: {
       rules: buildLoaders(options),
     },

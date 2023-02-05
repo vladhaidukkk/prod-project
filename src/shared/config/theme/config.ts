@@ -1,9 +1,5 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
-
-export const enum Themes {
-  Light = 'light',
-  Dark = 'dark',
-}
+import { LOCAL_STORAGE_THEME_KEY, Themes } from './consts';
 
 export type ThemeContextValue = {
   theme: Themes;
@@ -12,4 +8,5 @@ export type ThemeContextValue = {
 
 export const ThemeContext = createContext<ThemeContextValue>({} as ThemeContextValue);
 
-export const LOCAL_STORAGE_THEME_KEY = 'theme';
+export const initialTheme =
+  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes) ?? Themes.Light;

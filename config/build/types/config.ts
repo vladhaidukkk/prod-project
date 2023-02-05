@@ -6,6 +6,7 @@ export type BuildMode = Configuration['mode'];
 export type BuildPort = Port;
 
 export type BuildPaths = {
+  src: string;
   entry: string;
   output: string;
   html: string;
