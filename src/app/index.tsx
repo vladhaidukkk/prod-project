@@ -3,6 +3,7 @@ import Routing from 'pages';
 import { clsx } from 'shared/utils/clsx';
 import { useTheme } from 'shared/config/theme';
 import './index.scss';
+import { RouteNames, RoutePaths } from 'shared/config/routes';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -10,8 +11,8 @@ const App = () => {
   return (
     <div className={clsx('app', {}, [theme])}>
       <nav>
-        <Link to="/">Main</Link>
-        <Link to="/about">About</Link>
+        <Link to={RoutePaths[RouteNames.Main]}>Main</Link>
+        <Link to={RoutePaths[RouteNames.About]}>About</Link>
       </nav>
 
       <button type="button" onClick={toggleTheme}>
