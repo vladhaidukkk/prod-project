@@ -1,4 +1,3 @@
-import { ThemeSwitcher } from 'features/theme-switcher';
 import { RouteNames, RoutePaths } from 'shared/config/routes';
 import { RouteLink, RouteLinkVariants } from 'shared/ui/route-link';
 import { clsx } from 'shared/utils/clsx';
@@ -11,8 +10,6 @@ type NavbarProps = {
 export const Navbar = ({ className }: NavbarProps) => {
   return (
     <nav className={clsx(cls.navbar, {}, [className])}>
-      <ThemeSwitcher />
-
       <div className={cls.links}>
         <RouteLink to={RoutePaths[RouteNames.Main]} variant={RouteLinkVariants.Inverted}>
           Main
