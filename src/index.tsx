@@ -1,6 +1,6 @@
 import { render } from 'react-dom';
 import App from 'app';
-import Providers from 'app/providers';
+import { Providers } from 'app/providers';
 
 render(
   <Providers>

@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'shared/config/theme';
 import 'shared/config/i18n';
 
-const Providers: FC = ({ children }) => {
+export const Providers: FC = ({ children }) => {
   return (
     <BrowserRouter>
       <ThemeProvider>
@@ -12,5 +12,3 @@ const Providers: FC = ({ children }) => {
     </BrowserRouter>
   );
 };
-
-export default Providers;

@@ -1,8 +1,8 @@
-import Routing from 'pages';
 import { clsx } from 'shared/utils/clsx';
 import { useTheme } from 'shared/config/theme';
 import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
+import { Routing } from './routes';
 import './index.scss';
 
 const App = () => {
