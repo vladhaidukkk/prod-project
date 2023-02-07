@@ -2,12 +2,10 @@ lockfileVersion: 5.4
 
 specifiers:
   '@svgr/webpack': ^6.5.1
-  '@types/compose-function': ^0.0.30
   '@types/node': ^18.11.18
   '@types/react': ^17.0.53
   '@types/react-dom': ^17.0.18
   '@types/webpack': ^5.28.0
-  compose-function: ^3.0.3
   css-loader: ^6.7.3
   html-webpack-plugin: ^5.5.0
   i18next: ^22.4.9
@@ -29,7 +27,6 @@ specifiers:
   webpack-dev-server: ^4.11.1
 
 dependencies:
-  compose-function: 3.0.3
   i18next: 22.4.9
   i18next-browser-languagedetector: 7.0.1
   i18next-http-backend: 2.1.1
@@ -40,7 +37,6 @@ dependencies:
 
 devDependencies:
   '@svgr/webpack': 6.5.1
-  '@types/compose-function': 0.0.30
   '@types/node': 18.11.18
   '@types/react': 17.0.53
   '@types/react-dom': 17.0.18
@@ -1586,10 +1582,6 @@ packages:
       '@types/node': 18.11.18
     dev: true
 
-  /@types/compose-function/0.0.30:
-    resolution: {integrity: sha512-TY6zsIzbLU9nsRMVwaq5hYNSoglao3ZOm2I4jAi1EojDZJdF8vtDqBG+f086WJ17pwRH4sQseXp/U6GVxUxHwA==}
-    dev: true
-
   /@types/connect-history-api-fallback/1.3.5:
     resolution: {integrity: sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==}
     dependencies:
@@ -1996,10 +1988,6 @@ packages:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     dev: true
 
-  /arity-n/1.0.4:
-    resolution: {integrity: sha512-fExL2kFDC1Q2DUOx3whE/9KoN66IzkY4b4zUHUBFM1ojEYjZZYDcUW3bek/ufGionX9giIKDC5redH2IlGqcQQ==}
-    dev: false
-
   /array-flatten/1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
     dev: true
@@ -2253,12 +2241,6 @@ packages:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
     dev: true
-
-  /compose-function/3.0.3:
-    resolution: {integrity: sha512-xzhzTJ5eC+gmIzvZq+C3kCJHsp9os6tJkrigDRZclyGtOKINbZtE8n1Tzmeh32jW+BUDPbvZpibwvJHBLGMVwg==}
-    dependencies:
-      arity-n: 1.0.4
-    dev: false
 
   /compressible/2.0.18:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}

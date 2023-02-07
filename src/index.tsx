@@ -1,4 +1,10 @@
 import { render } from 'react-dom';
 import App from 'app';
+import Providers from 'app/providers';
 
-render(<App />, document.getElementById('root'));
+render(
+  <Providers>
+    <App />
+  </Providers>,
+  document.getElementById('root')
+);

@@ -1,6 +1,16 @@
-import compose from 'compose-function';
-import { withI18n } from './with-i18n';
-import { withRouter } from './with-router';
-import { withTheme } from './with-theme';
+import { FC, Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'shared/config/theme';
+import 'shared/config/i18n';
 
-export const withProviders = compose(withRouter, withTheme, withI18n);
+const Providers: FC = ({ children }) => {
+  return (
+    <BrowserRouter>
+      <ThemeProvider>
+        <Suspense fallback="">{children}</Suspense>
+      </ThemeProvider>
+    </BrowserRouter>
+  );
+};
+
+export default Providers;

@@ -3,7 +3,6 @@ import { clsx } from 'shared/utils/clsx';
 import { useTheme } from 'shared/config/theme';
 import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
-import { withProviders } from './providers';
 import './index.scss';
 
 const App = () => {
@@ -20,4 +19,4 @@ const App = () => {
   );
 };
 
-export default withProviders(App);
+export default App;
