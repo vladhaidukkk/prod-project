@@ -3,6 +3,12 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+  const babelLoader: RuleSetRule = {
+    test: /\.(js|tsx?)$/,
+    use: 'babel-loader',
+    exclude: /node_modules/,
+  };
+
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
     use: 'ts-loader',
@@ -37,5 +43,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     type: 'asset/resource',
   };
 
-  return [typescriptLoader, sassLoader, svgLoader, fileLoader];
+  return [babelLoader, typescriptLoader, sassLoader, svgLoader, fileLoader];
 }
