@@ -9,7 +9,6 @@ specifiers:
   '@types/react-dom': ^17.0.18
   '@types/webpack': ^5.28.0
   babel-loader: ^9.1.2
-  babel-plugin-i18next-extract: ^0.9.0
   css-loader: ^6.7.3
   html-webpack-plugin: ^5.5.0
   i18next: ^22.4.9
@@ -48,7 +47,6 @@ devDependencies:
   '@types/react-dom': 17.0.18
   '@types/webpack': 5.28.0_webpack-cli@5.0.1
   babel-loader: 9.1.2_la66t7xldg4uecmyawueag5wkm
-  babel-plugin-i18next-extract: 0.9.0
   css-loader: 6.7.3_webpack@5.75.0
   html-webpack-plugin: 5.5.0_webpack@5.75.0
   mini-css-extract-plugin: 2.7.2_webpack@5.75.0
@@ -1321,15 +1319,6 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/types/7.18.10:
-    resolution: {integrity: sha512-MJvnbEiiNkpjo+LknnmRrqbY1GPUUggjv+wQVjetM/AONoupqRALB7I6jGqNUAZsKcRIEu2J6FRFvsczljjsaQ==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.19.4
-      '@babel/helper-validator-identifier': 7.19.1
-      to-fast-properties: 2.0.0
-    dev: true
-
   /@babel/types/7.20.7:
     resolution: {integrity: sha512-69OnhBxSSgK0OzTJai4kyPDiKTIe3j+ctaHdIGVbRahTLAT7L3R9oeXHC2aVSuGYt3cVnoAMDmOCgJ2yaiLMvg==}
     engines: {node: '>=6.9.0'}
@@ -2024,19 +2013,6 @@ packages:
       find-cache-dir: 3.3.2
       schema-utils: 4.0.0
       webpack: 5.75.0_webpack-cli@5.0.1
-    dev: true
-
-  /babel-plugin-i18next-extract/0.9.0:
-    resolution: {integrity: sha512-i/kcv6YlYFvUR8rICPBxP4xQXenFOGe+84hzYLXItJYrLlimph4lne6hoZXYgaU3mVJmtRokcBmn4RvcitizXA==}
-    engines: {node: '>=10.0.0'}
-    dependencies:
-      '@babel/core': 7.20.12
-      '@babel/types': 7.18.10
-      deepmerge: 4.3.0
-      i18next: 21.10.0
-      json-stable-stringify: 1.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /babel-plugin-polyfill-corejs2/0.3.3_@babel+core@7.20.12:
@@ -3030,12 +3006,6 @@ packages:
       - encoding
     dev: false
 
-  /i18next/21.10.0:
-    resolution: {integrity: sha512-YeuIBmFsGjUfO3qBmMOc0rQaun4mIpGKET5WDwvu8lU7gvwpcariZLNtL0Fzj+zazcHUrlXHiptcFhBMFaxzfg==}
-    dependencies:
-      '@babel/runtime': 7.20.13
-    dev: true
-
   /i18next/22.4.9:
     resolution: {integrity: sha512-8gWMmUz460KJDQp/ob3MNUX84cVuDRY9PLFPnV8d+Qezz/6dkjxwOaH70xjrCNDO+JrUL25iXfAIN9wUkInNZw==}
     dependencies:
@@ -3221,20 +3191,10 @@ packages:
     resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
     dev: true
 
-  /json-stable-stringify/1.0.2:
-    resolution: {integrity: sha512-eunSSaEnxV12z+Z73y/j5N37/In40GK4GmsSy+tEHJMxknvqnA7/djeYtAgW0GsWHUfg+847WJjKaEylk2y09g==}
-    dependencies:
-      jsonify: 0.0.1
-    dev: true
-
   /json5/2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: true
-
-  /jsonify/0.0.1:
-    resolution: {integrity: sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==}
     dev: true
 
   /kind-of/6.0.3:
