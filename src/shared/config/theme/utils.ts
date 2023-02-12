@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Themes } from './consts';
-import { ThemeContext, ThemeContextValue } from './config';
+import { ThemeContext, type ThemeContextValue } from './config';
 
 type UseThemeResult = {
   toggleTheme: () => void;

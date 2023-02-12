@@ -4,9 +4,9 @@ import { Button, ButtonVariants } from 'shared/ui/button';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 
-type ThemeSwitcherProps = {
+interface ThemeSwitcherProps {
   className?: string;
-};
+}
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();

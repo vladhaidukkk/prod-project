@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Link, LinkProps } from 'react-router-dom';
+import { type FC } from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
 import { clsx } from 'shared/utils/clsx';
 import { RouteLinkVariants } from '../consts';
 import cls from './route-link.module.scss';

@@ -1,12 +1,12 @@
 import {
   ProgressPlugin,
-  WebpackPluginInstance,
+  type WebpackPluginInstance,
   DefinePlugin,
   HotModuleReplacementPlugin,
 } from 'webpack';
 import HtmlPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from './types/config';
+import { type BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
   return [

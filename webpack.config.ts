@@ -1,6 +1,11 @@
 import path from 'node:path';
 import { buildConfig } from './config/build/buildConfig';
-import { BuildEnv, BuildMode, BuildPaths, BuildPort } from './config/build/types/config';
+import {
+  type BuildEnv,
+  type BuildMode,
+  type BuildPaths,
+  type BuildPort,
+} from './config/build/types/config';
 
 export default (env: BuildEnv) => {
   const mode: BuildMode = env.mode ?? 'development';

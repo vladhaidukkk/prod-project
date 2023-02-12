@@ -5,9 +5,9 @@ import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
 import cls from './sidebar.module.scss';
 
-type SidebarProps = {
+interface SidebarProps {
   className?: string;
-};
+}
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);

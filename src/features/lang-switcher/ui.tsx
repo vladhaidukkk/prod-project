@@ -2,15 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariants } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
 
-type LangSwitcherProps = {
+interface LangSwitcherProps {
   className?: string;
-};
+}
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const handleToggle = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'ua' : 'en');
+    void i18n.changeLanguage(i18n.language === 'en' ? 'ua' : 'en');
   };
 
   return (

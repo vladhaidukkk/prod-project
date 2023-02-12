@@ -3,9 +3,9 @@ import { RouteLink, RouteLinkVariants } from 'shared/ui/route-link';
 import { clsx } from 'shared/utils/clsx';
 import cls from './navbar.module.scss';
 
-type NavbarProps = {
+interface NavbarProps {
   className?: string;
-};
+}
 
 export const Navbar = ({ className }: NavbarProps) => {
   return (

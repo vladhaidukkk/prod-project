@@ -1,5 +1,5 @@
-import { FC, useEffect, useMemo, useState } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, Themes } from './consts';
+import { type FC, useEffect, useMemo, useState } from 'react';
+import { LOCAL_STORAGE_THEME_KEY, type Themes } from './consts';
 import { initialTheme, ThemeContext } from './config';
 
 export const ThemeProvider: FC = ({ children }) => {
@@ -14,7 +14,7 @@ export const ThemeProvider: FC = ({ children }) => {
       theme,
       setTheme,
     }),
-    [theme]
+    [theme],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;

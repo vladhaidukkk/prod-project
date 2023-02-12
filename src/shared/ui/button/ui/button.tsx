@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { type ButtonHTMLAttributes, type FC } from 'react';
 import { clsx } from 'shared/utils/clsx';
-import { ButtonVariants } from '../consts';
+import { type ButtonVariants } from '../consts';
 import cls from './button.module.scss';
 
 type ButtonProps = {

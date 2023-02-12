@@ -1,25 +1,25 @@
-import { Configuration } from 'webpack';
-import { Port } from 'webpack-dev-server';
+import { type Configuration } from 'webpack';
+import { type Port } from 'webpack-dev-server';
 
 export type BuildMode = Configuration['mode'];
 
 export type BuildPort = Port;
 
-export type BuildPaths = {
+export interface BuildPaths {
   src: string;
   entry: string;
   output: string;
   html: string;
-};
+}
 
-export type BuildEnv = {
+export interface BuildEnv {
   mode: BuildMode;
   port: BuildPort;
-};
+}
 
-export type BuildOptions = {
+export interface BuildOptions {
   mode: BuildMode;
   port: BuildPort;
   paths: BuildPaths;
   isDev: boolean;
-};
+}

@@ -1,4 +1,4 @@
-import { FC, Suspense } from 'react';
+import { type FC, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'shared/config/theme';
 import 'shared/config/i18n';
