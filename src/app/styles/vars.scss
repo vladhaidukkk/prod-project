@@ -1,19 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap";
 
 :root {
-  --font-family-main: 'Roboto Mono', monospace;
-
+  --font-family-main: "Roboto Mono", monospace;
   --font-size-base: 16px;
   --font-line-base: 24px;
   --font-base: var(--font-size-base) / var(--font-line-base) var(--font-family-main);
-
   --font-size-lg: 24px;
   --font-line-lg: 32px;
   --font-lg: var(--font-size-lg) / var(--font-line-lg) var(--font-family-main);
 
   // Layout
   --navbar-height: 50px;
-
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
 }

@@ -11,8 +11,14 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": null
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "[scss]": {
+    "editor.defaultFormatter": null
   },
-  "eslint.validate": ["typescript", "typescriptreact"]
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "scss.validate": false,
+  "stylelint.validate": ["scss"]
 }
