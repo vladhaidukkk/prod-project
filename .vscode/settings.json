@@ -4,5 +4,15 @@
   "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
   "i18n-ally.defaultNamespace": "translation",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.enabledFrameworks": ["react", "i18next", "general"]
+  "i18n-ally.enabledFrameworks": ["react", "i18next", "general"],
+  "[typescript]": {
+    "editor.defaultFormatter": null
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": null
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["typescript", "typescriptreact"]
 }

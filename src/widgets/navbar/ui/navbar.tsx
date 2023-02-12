@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { RouteNames, RoutePaths } from 'shared/config/routes';
 import { RouteLink, RouteLinkVariants } from 'shared/ui/route-link';
 import { clsx } from 'shared/utils/clsx';
@@ -8,14 +9,16 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+  const { t } = useTranslation();
+
   return (
     <nav className={clsx(cls.navbar, {}, [className])}>
       <div className={cls.links}>
         <RouteLink to={RoutePaths[RouteNames.Main]} variant={RouteLinkVariants.Inverted}>
-          Main
+          {t('Main')}
         </RouteLink>
         <RouteLink to={RoutePaths[RouteNames.About]} variant={RouteLinkVariants.Inverted}>
-          About
+          {t('About')}
         </RouteLink>
       </div>
     </nav>
