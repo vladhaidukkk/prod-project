@@ -5,21 +5,21 @@ export type BuildMode = Configuration['mode'];
 
 export type BuildPort = Port;
 
-export interface BuildPaths {
+export type BuildPaths = {
   src: string;
   entry: string;
   output: string;
   html: string;
-}
+};
 
-export interface BuildEnv {
+export type BuildEnv = {
   mode: BuildMode;
   port: BuildPort;
-}
+};
 
-export interface BuildOptions {
+export type BuildOptions = {
   mode: BuildMode;
   port: BuildPort;
   paths: BuildPaths;
   isDev: boolean;
-}
+};

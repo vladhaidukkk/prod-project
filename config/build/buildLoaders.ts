@@ -25,6 +25,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
           modules: {
             auto: /\.module\./,
             localIdentName: isDev ? '[path][name]__[local]--[hash:base64:8]' : '[hash:base64:8]',
+            exportLocalsConvention: 'camelCaseOnly',
           },
         },
       },

@@ -26,6 +26,9 @@
         "asyncArrow": "always"
       }
     ],
+    "no-return-await": "off",
+    "@typescript-eslint/return-await": ["error", "never"],
+    "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/member-delimiter-style": [
       "error",
@@ -42,6 +45,7 @@
       }
     ],
     "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/consistent-type-assertions": ["error", { "assertionStyle": "as" }],
     "@typescript-eslint/naming-convention": [
       "error",

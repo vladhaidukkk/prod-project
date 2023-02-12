@@ -6,9 +6,9 @@ import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
 import cls from './sidebar.module.scss';
 
-interface SidebarProps {
+type SidebarProps = {
   className?: string;
-}
+};
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const { t } = useTranslation('');

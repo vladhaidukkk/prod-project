@@ -1,10 +1,10 @@
 import { createContext, type Dispatch, type SetStateAction } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Themes } from './consts';
 
-export interface ThemeContextValue {
+export type ThemeContextValue = {
   theme: Themes;
   setTheme: Dispatch<SetStateAction<Themes>>;
-}
+};
 
 export const ThemeContext = createContext<ThemeContextValue>({} as ThemeContextValue);
 
