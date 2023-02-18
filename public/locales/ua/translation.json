@@ -2,5 +2,7 @@
   "Main": "Головна",
   "About": "Про нас",
   "Language": "Українська",
-  "toggle": "перемкнути"
+  "toggle": "перемкнути",
+  "Something went wrong": "Щось пішло не так",
+  "Throw an error": "Викинути помилку"
 }

@@ -2,5 +2,7 @@
   "Main": "Main",
   "About": "About",
   "Language": "English",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Something went wrong": "Something went wrong",
+  "Throw an error": "Throw an error"
 }
