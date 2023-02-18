@@ -1,15 +1,15 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
-import { withTranslation, type WithTranslation } from 'react-i18next';
+import { PageError } from 'widgets/page-error';
 
 type ErrorBoundaryProps = {
   children: ReactNode;
-} & WithTranslation;
+};
 
 type ErrorBoundaryState = {
   hasError: boolean;
 };
 
-class _ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
@@ -25,11 +25,9 @@ class _ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render() {
     if (this.state.hasError) {
-      return <h1>{this.props.t('Something went wrong')}</h1>;
+      return <PageError />;
     }
 
     return this.props.children;
   }
 }
-
-export const ErrorBoundary = withTranslation()(_ErrorBoundary);
