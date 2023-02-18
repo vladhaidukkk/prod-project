@@ -1,6 +1,7 @@
 import { render } from 'react-dom';
-import App from 'app';
-import { Providers } from 'app/providers';
+import { App, Providers } from 'app';
+// Global styles that should be loaded even if the App has failed
+import 'app/styles/index.scss';
 
 render(
   <Providers>

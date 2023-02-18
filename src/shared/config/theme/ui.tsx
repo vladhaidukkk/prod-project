@@ -6,6 +6,7 @@ export const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Themes>(initialTheme);
 
   useEffect(() => {
+    document.documentElement.className = theme;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
   }, [theme]);
 
