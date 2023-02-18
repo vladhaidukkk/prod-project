@@ -13,10 +13,17 @@ const config: Config = {
     'json',
     'node',
   ],
+  moduleNameMapper: {
+    '\\.s[ac]ss$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/config/jest/mocks/svg.tsx',
+  },
+  modulePaths: ['<rootDir>/src'],
+  rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>/config/jest/jest.setup.ts'],
   testEnvironment: 'jsdom',
   testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[tj]s?(x)',
+    '<rootDir>/src/**/__tests__/**/*.[jt]s?(x)',
+    '<rootDir>/src/**/?(*.)+(spec|test).[tj]s?(x)',
   ],
   testPathIgnorePatterns: ['/node_modules/'],
 };

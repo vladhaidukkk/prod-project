@@ -19,8 +19,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
   };
 
   return (
-    <aside className={clsx(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-      <Button onClick={handleToggle}>{t('toggle')}</Button>
+    <aside data-testid="sidebar" className={clsx(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+      <Button data-testid="sidebar-toggle" onClick={handleToggle}>{t('toggle')}</Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
