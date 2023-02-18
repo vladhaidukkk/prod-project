@@ -3,16 +3,15 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { type BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
-  const babelLoader: RuleSetRule = {
-    test: /\.(js|tsx?)$/,
-    use: 'babel-loader',
-    exclude: /node_modules/,
+  const fileLoader: RuleSetRule = {
+    test: /\.(png|jpe?g|gif)$/i,
+    type: 'asset/resource',
   };
 
-  const typescriptLoader: RuleSetRule = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
+  const svgLoader: RuleSetRule = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ['@svgr/webpack'],
   };
 
   const sassLoader: RuleSetRule = {
@@ -33,16 +32,17 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  const svgLoader: RuleSetRule = {
-    test: /\.svg$/i,
-    issuer: /\.[jt]sx?$/,
-    use: ['@svgr/webpack'],
+  const babelLoader: RuleSetRule = {
+    test: /\.(js|tsx?)$/,
+    use: 'babel-loader',
+    exclude: /node_modules/,
   };
 
-  const fileLoader: RuleSetRule = {
-    test: /\.(png|jpe?g|gif)$/i,
-    type: 'asset/resource',
+  const typescriptLoader: RuleSetRule = {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/,
   };
 
-  return [babelLoader, typescriptLoader, sassLoader, svgLoader, fileLoader];
+  return [fileLoader, svgLoader, sassLoader, babelLoader, typescriptLoader];
 }

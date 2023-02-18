@@ -9,7 +9,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { type BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
-  return [
+  const plugins: WebpackPluginInstance[] = [
     new ProgressPlugin(),
     new HtmlPlugin({
       template: paths.html,
@@ -21,6 +21,11 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new HotModuleReplacementPlugin(),
   ];
+
+  if (isDev) {
+    plugins.push(new HotModuleReplacementPlugin());
+  }
+
+  return plugins;
 }
