@@ -24,5 +24,6 @@ export default (env: BuildEnv) => {
     port,
     paths,
     isDev,
+    analyzeBundle: env.analyze,
   });
 };

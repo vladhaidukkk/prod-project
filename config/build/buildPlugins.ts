@@ -6,9 +6,10 @@ import {
 } from 'webpack';
 import HtmlPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { type BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, analyzeBundle }: BuildOptions): WebpackPluginInstance[] {
   const plugins: WebpackPluginInstance[] = [
     new ProgressPlugin(),
     new HtmlPlugin({
@@ -22,6 +23,10 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
       __IS_DEV__: JSON.stringify(isDev),
     }),
   ];
+
+  if (analyzeBundle) {
+    plugins.push(new BundleAnalyzerPlugin());
+  }
 
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin());

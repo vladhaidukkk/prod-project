@@ -15,6 +15,7 @@ export type BuildPaths = {
 export type BuildEnv = {
   mode: BuildMode;
   port: BuildPort;
+  analyze: boolean;
 };
 
 export type BuildOptions = {
@@ -22,4 +23,5 @@ export type BuildOptions = {
   port: BuildPort;
   paths: BuildPaths;
   isDev: boolean;
+  analyzeBundle: boolean;
 };
