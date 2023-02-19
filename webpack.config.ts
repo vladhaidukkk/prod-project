@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { buildConfig } from './config/build/buildConfig';
+import { buildConfig } from './config/build/build-config';
 import {
   type BuildEnv,
   type BuildMode,

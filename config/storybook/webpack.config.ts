@@ -1,8 +1,8 @@
 import path from 'node:path';
 import { type RuleSetRule, type Configuration } from 'webpack';
 import { type BuildOptions, type BuildPaths } from '../build/types/config';
-import { buildSassLoader } from '../build/loaders/buildSassLoader';
-import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
+import { buildSassLoader } from '../build/loaders/build-sass-loader';
+import { buildSvgLoader } from '../build/loaders/build-svg-loader';
 
 type WebpackInterceptorOptions = {
   config: Configuration;

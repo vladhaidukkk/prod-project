@@ -1,8 +1,8 @@
 import { type Configuration } from 'webpack';
-import { buildDevServer } from './buildDevServer';
-import { buildResolve } from './buildResolve';
-import { buildLoaders } from './buildLoaders';
-import { buildPlugins } from './buildPlugins';
+import { buildDevServer } from './build-dev-server';
+import { buildResolve } from './build-resolve';
+import { buildLoaders } from './build-loaders';
+import { buildPlugins } from './build-plugins';
 import { type BuildOptions } from './types/config';
 
 export function buildConfig(options: BuildOptions): Configuration {
