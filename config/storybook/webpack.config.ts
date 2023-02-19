@@ -19,7 +19,7 @@ export default ({ config }: WebpackInterceptorOptions): Configuration => {
     mode: config.mode,
     port: '',
     paths,
-    isDev: config.mode === 'development',
+    isDev: true, // For Storybook we only need style-loader without MiniCssExtractPlugin.loader
     analyzeBundle: false,
   };
 
