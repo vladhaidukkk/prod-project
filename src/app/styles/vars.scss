@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap';
 
 :root {
+  // Fonts
   --font-family-main: 'Roboto Mono', monospace;
   --font-size-base: 16px;
   --font-line-base: 24px;
@@ -12,7 +13,13 @@
   --font-line-xl: 40px;
   --font-xl: var(--font-line-xl) / var(--font-line-xl) var(--font-family-main);
 
-  // Layout
+  // Colors
+  --overlay-color: rgba(0 0 0 / 60%);
+
+  // Z-indexes
+  --modal-z-index: 10;
+
+  // Layouts
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;

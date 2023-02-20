@@ -19,14 +19,20 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 // Filled
 export const FilledPrimary = Template.bind({});
 
+export const FilledPrimaryInverted = Template.bind({});
+FilledPrimaryInverted.args = {
+  inverted: true,
+};
+
 export const FilledBackground = Template.bind({});
 FilledBackground.args = {
   color: 'background',
 };
 
-export const FilledInvertedBackground = Template.bind({});
-FilledInvertedBackground.args = {
-  color: 'invertedBackground',
+export const FilledBackgroundInverted = Template.bind({});
+FilledBackgroundInverted.args = {
+  color: 'background',
+  inverted: true,
 };
 
 export const FilledPrimaryLg = Template.bind({});
@@ -53,22 +59,35 @@ FilledPrimaryCompact.args = {
 export const FilledPrimaryDark = Template.bind({});
 FilledPrimaryDark.decorators = [ThemeDecorator(Themes.Dark)];
 
+export const FilledPrimaryInvertedDark = Template.bind({});
+FilledPrimaryInvertedDark.args = {
+  inverted: true,
+};
+FilledPrimaryInvertedDark.decorators = [ThemeDecorator(Themes.Dark)];
+
 export const FilledBackgroundDark = Template.bind({});
 FilledBackgroundDark.args = {
   color: 'background',
 };
 FilledBackgroundDark.decorators = [ThemeDecorator(Themes.Dark)];
 
-export const FilledInvertedBackgroundDark = Template.bind({});
-FilledInvertedBackgroundDark.args = {
-  color: 'invertedBackground',
+export const FilledBackgroundInvertedDark = Template.bind({});
+FilledBackgroundInvertedDark.args = {
+  color: 'background',
+  inverted: true,
 };
-FilledInvertedBackgroundDark.decorators = [ThemeDecorator(Themes.Dark)];
+FilledBackgroundInvertedDark.decorators = [ThemeDecorator(Themes.Dark)];
 
 // Outlined
 export const OutlinedPrimary = Template.bind({});
 OutlinedPrimary.args = {
   variant: 'outlined',
+};
+
+export const OutlinedPrimaryInverted = Template.bind({});
+OutlinedPrimaryInverted.args = {
+  variant: 'outlined',
+  inverted: true,
 };
 
 export const OutlinedBackground = Template.bind({});
@@ -77,10 +96,11 @@ OutlinedBackground.args = {
   color: 'background',
 };
 
-export const OutlinedInvertedBackground = Template.bind({});
-OutlinedInvertedBackground.args = {
+export const OutlinedBackgroundInverted = Template.bind({});
+OutlinedBackgroundInverted.args = {
   variant: 'outlined',
-  color: 'invertedBackground',
+  color: 'background',
+  inverted: true,
 };
 
 export const OutlinedPrimaryLg = Template.bind({});
@@ -114,6 +134,13 @@ OutlinedPrimaryDark.args = {
 };
 OutlinedPrimaryDark.decorators = [ThemeDecorator(Themes.Dark)];
 
+export const OutlinedPrimaryInvertedDark = Template.bind({});
+OutlinedPrimaryInvertedDark.args = {
+  variant: 'outlined',
+  inverted: true,
+};
+OutlinedPrimaryInvertedDark.decorators = [ThemeDecorator(Themes.Dark)];
+
 export const OutlinedBackgroundDark = Template.bind({});
 OutlinedBackgroundDark.args = {
   variant: 'outlined',
@@ -121,17 +148,24 @@ OutlinedBackgroundDark.args = {
 };
 OutlinedBackgroundDark.decorators = [ThemeDecorator(Themes.Dark)];
 
-export const OutlinedInvertedBackgroundDark = Template.bind({});
-OutlinedInvertedBackgroundDark.args = {
+export const OutlinedBackgroundInvertedDark = Template.bind({});
+OutlinedBackgroundInvertedDark.args = {
   variant: 'outlined',
-  color: 'invertedBackground',
+  color: 'background',
+  inverted: true,
 };
-OutlinedInvertedBackgroundDark.decorators = [ThemeDecorator(Themes.Dark)];
+OutlinedBackgroundInvertedDark.decorators = [ThemeDecorator(Themes.Dark)];
 
 // Text
 export const TextPrimary = Template.bind({});
 TextPrimary.args = {
   variant: 'text',
+};
+
+export const TextPrimaryInverted = Template.bind({});
+TextPrimaryInverted.args = {
+  variant: 'text',
+  inverted: true,
 };
 
 export const TextBackground = Template.bind({});
@@ -140,10 +174,11 @@ TextBackground.args = {
   color: 'background',
 };
 
-export const TextInvertedBackground = Template.bind({});
-TextInvertedBackground.args = {
+export const TextBackgroundInverted = Template.bind({});
+TextBackgroundInverted.args = {
   variant: 'text',
-  color: 'invertedBackground',
+  color: 'background',
+  inverted: true,
 };
 
 export const TextPrimaryLg = Template.bind({});
@@ -177,6 +212,13 @@ TextPrimaryDark.args = {
 };
 TextPrimaryDark.decorators = [ThemeDecorator(Themes.Dark)];
 
+export const TextPrimaryInvertedDark = Template.bind({});
+TextPrimaryInvertedDark.args = {
+  variant: 'text',
+  inverted: true,
+};
+TextPrimaryInvertedDark.decorators = [ThemeDecorator(Themes.Dark)];
+
 export const TextBackgroundDark = Template.bind({});
 TextBackgroundDark.args = {
   variant: 'text',
@@ -184,9 +226,10 @@ TextBackgroundDark.args = {
 };
 TextBackgroundDark.decorators = [ThemeDecorator(Themes.Dark)];
 
-export const TextInvertedBackgroundDark = Template.bind({});
-TextInvertedBackgroundDark.args = {
+export const TextBackgroundInvertedDark = Template.bind({});
+TextBackgroundInvertedDark.args = {
   variant: 'text',
-  color: 'invertedBackground',
+  color: 'background',
+  inverted: true,
 };
-TextInvertedBackgroundDark.decorators = [ThemeDecorator(Themes.Dark)];
+TextBackgroundInvertedDark.decorators = [ThemeDecorator(Themes.Dark)];

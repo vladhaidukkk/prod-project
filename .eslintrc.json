@@ -16,7 +16,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
     "no-return-await": "off",
     "@typescript-eslint/return-await": ["error", "never"],
@@ -53,7 +53,9 @@
       }
     ],
     "react/react-in-jsx-scope": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   },
   "overrides": [
     {

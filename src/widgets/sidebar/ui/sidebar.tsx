@@ -30,8 +30,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <Button
         data-testid="sidebar-collapse-btn"
         className={cls.collapseBtn}
-        color="invertedBackground"
+        color="background"
         size="lg"
+        inverted
         square
         onClick={handleToggle}
       >

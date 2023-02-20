@@ -8,6 +8,7 @@ type ButtonProps = {
   variant?: ButtonVariant;
   color?: ButtonColor;
   size?: ButtonSize;
+  inverted?: boolean;
   square?: boolean;
   compact?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -17,6 +18,7 @@ export const Button: FC<ButtonProps> = ({
   variant = 'filled',
   color = 'primary',
   size = 'base',
+  inverted = false,
   square = false,
   compact = false,
   children,
@@ -24,12 +26,11 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={clsx(cls.button, { [cls.square]: square, [cls.compact]: compact }, [
-        className,
-        cls[variant],
-        cls[color],
-        cls[size],
-      ])}
+      className={clsx(
+        cls.button,
+        { [cls.inverted]: inverted, [cls.square]: square, [cls.compact]: compact },
+        [className, cls[variant], cls[color], cls[size]]
+      )}
       {...restProps}
     >
       {children}
