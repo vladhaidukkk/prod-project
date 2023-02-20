@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
 
 type LangSwitcherProps = {
   className?: string;
+  short?: boolean;
 };
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, short = false }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const handleToggle = () => {
@@ -15,11 +16,12 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   return (
     <Button
-      variant={ButtonVariants.Clear}
       className={clsx('', {}, [className])}
+      variant="text"
+      compact
       onClick={handleToggle}
     >
-      {t('Language')}
+      {short ? t('Language Short') : t('Language')}
     </Button>
   );
 };

@@ -1,6 +1,6 @@
 import { Themes, useTheme } from 'shared/config/theme';
 import { clsx } from 'shared/utils/clsx';
-import { Button, ButtonVariants } from 'shared/ui/button';
+import { Button } from 'shared/ui/button';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 
@@ -13,8 +13,9 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 
   return (
     <Button
-      variant={ButtonVariants.Clear}
       className={clsx('', {}, [className])}
+      variant="text"
+      compact
       onClick={toggleTheme}
     >
       {theme === Themes.Light ? <LightIcon /> : <DarkIcon />}

@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import { ButtonVariants } from '../consts';
 import { Button } from './button';
 
 describe('Button component', () => {
@@ -8,8 +7,18 @@ describe('Button component', () => {
     expect(screen.getByText('Text')).toBeInTheDocument();
   });
 
-  test('should render with variant', () => {
-    render(<Button variant={ButtonVariants.Clear}>Text</Button>);
-    expect(screen.getByText('Text')).toHaveClass(ButtonVariants.Clear);
+  test('should render with filled variant', () => {
+    render(<Button variant="filled">Text</Button>);
+    expect(screen.getByText('Text')).toHaveClass('filled');
+  });
+
+  test('should render with outlined variant', () => {
+    render(<Button variant="outlined">Text</Button>);
+    expect(screen.getByText('Text')).toHaveClass('outlined');
+  });
+
+  test('should render with text variant', () => {
+    render(<Button variant="text">Text</Button>);
+    expect(screen.getByText('Text')).toHaveClass('text');
   });
 });
