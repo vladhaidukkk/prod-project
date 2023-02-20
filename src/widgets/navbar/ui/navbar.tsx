@@ -6,7 +6,5 @@ type NavbarProps = {
 };
 
 export const Navbar = ({ className }: NavbarProps) => {
-  return (
-    <nav className={clsx(cls.navbar, {}, [className])} />
-  );
+  return <nav className={clsx(cls.navbar, {}, [className])} />;
 };

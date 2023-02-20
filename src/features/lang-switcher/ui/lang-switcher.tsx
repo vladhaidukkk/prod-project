@@ -15,12 +15,7 @@ export const LangSwitcher = ({ className, short = false }: LangSwitcherProps) =>
   };
 
   return (
-    <Button
-      className={clsx('', {}, [className])}
-      variant="text"
-      compact
-      onClick={handleToggle}
-    >
+    <Button className={clsx('', {}, [className])} variant="text" compact onClick={handleToggle}>
       {short ? t('Language Short') : t('Language')}
     </Button>
   );

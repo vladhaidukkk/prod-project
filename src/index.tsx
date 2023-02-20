@@ -7,5 +7,5 @@ render(
   <Providers>
     <App />
   </Providers>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

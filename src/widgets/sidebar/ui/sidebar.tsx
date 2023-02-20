@@ -23,7 +23,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
   };
 
   return (
-    <aside data-testid="sidebar" className={clsx(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+    <aside
+      data-testid="sidebar"
+      className={clsx(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
+    >
       <Button
         data-testid="sidebar-collapse-btn"
         className={cls.collapseBtn}
@@ -35,11 +38,19 @@ export const Sidebar = ({ className }: SidebarProps) => {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.items}>
-        <RouteLink to={RoutePaths[RouteNames.Main]} variant={RouteLinkVariants.Inverted} className={cls.item}>
+        <RouteLink
+          to={RoutePaths[RouteNames.Main]}
+          variant={RouteLinkVariants.Inverted}
+          className={cls.item}
+        >
           <HomeIcon className={cls.icon} />
           <span className={cls.text}>{t('Main')}</span>
         </RouteLink>
-        <RouteLink to={RoutePaths[RouteNames.About]} variant={RouteLinkVariants.Inverted} className={cls.item}>
+        <RouteLink
+          to={RoutePaths[RouteNames.About]}
+          variant={RouteLinkVariants.Inverted}
+          className={cls.item}
+        >
           <AboutIcon className={cls.icon} />
           <span className={cls.text}>{t('About')}</span>
         </RouteLink>

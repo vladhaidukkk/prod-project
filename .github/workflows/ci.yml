@@ -25,6 +25,9 @@ jobs:
       - name: Lint Styles
         if: always()
         run: npm run lint:scss
+      - name: Check Code Style
+        if: always()
+        run: npm run format:check
       - name: Run Unit Tests
         if: always()
         run: npm run test:unit

@@ -12,12 +12,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button
-      className={clsx('', {}, [className])}
-      variant="text"
-      compact
-      onClick={toggleTheme}
-    >
+    <Button className={clsx('', {}, [className])} variant="text" compact onClick={toggleTheme}>
       {theme === Themes.Light ? <LightIcon /> : <DarkIcon />}
     </Button>
   );

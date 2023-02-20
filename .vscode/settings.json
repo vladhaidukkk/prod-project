@@ -5,15 +5,9 @@
   "i18n-ally.defaultNamespace": "translation",
   "i18n-ally.keystyle": "nested",
   "i18n-ally.enabledFrameworks": ["react", "i18next", "general"],
-  "[typescript]": {
-    "editor.defaultFormatter": null
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": null
-  },
-  "[scss]": {
-    "editor.defaultFormatter": null
-  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true

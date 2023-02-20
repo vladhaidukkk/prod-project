@@ -1,6 +1,10 @@
 import { addDecorator } from '@storybook/react';
 import { Themes } from '../../src/shared/config/theme';
-import { GlobalStylesDecorator, ThemeDecorator, RouterDecorator } from '../../src/shared/config/storybook';
+import {
+  GlobalStylesDecorator,
+  ThemeDecorator,
+  RouterDecorator,
+} from '../../src/shared/config/storybook';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

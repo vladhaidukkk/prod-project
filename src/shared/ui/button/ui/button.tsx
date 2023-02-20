@@ -23,7 +23,15 @@ export const Button: FC<ButtonProps> = ({
   ...restProps
 }) => {
   return (
-    <button className={clsx(cls.button, { [cls.square]: square, [cls.compact]: compact }, [className, cls[variant], cls[color], cls[size]])} {...restProps}>
+    <button
+      className={clsx(cls.button, { [cls.square]: square, [cls.compact]: compact }, [
+        className,
+        cls[variant],
+        cls[color],
+        cls[size],
+      ])}
+      {...restProps}
+    >
       {children}
     </button>
   );

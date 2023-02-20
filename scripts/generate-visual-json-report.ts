@@ -26,7 +26,7 @@ async function main() {
       actualDir: relative(lokiDir, actualDir),
       expectedDir: relative(lokiDir, expectedDir),
       diffDir: relative(lokiDir, diffDir),
-    }),
+    })
   );
 }
 

@@ -8,12 +8,15 @@ type RenderWithProvidersOptions = {
   routes: MemoryRouterProps['initialEntries'];
 };
 
-export function renderWithProviders(component: ReactNode, { routes }: RenderWithProvidersOptions = {
-  routes: ['/'],
-}) {
+export function renderWithProviders(
+  component: ReactNode,
+  { routes }: RenderWithProvidersOptions = {
+    routes: ['/'],
+  }
+) {
   return render(
     <MemoryRouter initialEntries={routes}>
       <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
-    </MemoryRouter>,
+    </MemoryRouter>
   );
 }

@@ -1,7 +1,7 @@
-@import "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap";
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap';
 
 :root {
-  --font-family-main: "Roboto Mono", monospace;
+  --font-family-main: 'Roboto Mono', monospace;
   --font-size-base: 16px;
   --font-line-base: 24px;
   --font-base: var(--font-size-base) / var(--font-line-base) var(--font-family-main);
