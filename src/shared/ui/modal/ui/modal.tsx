@@ -8,7 +8,7 @@ const CLOSING_DURATION = 300;
 type ModalProps = {
   className?: string;
   open: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   children: ReactNode;
 };
 
@@ -17,11 +17,13 @@ export const Modal = ({ className, open, onClose, children }: ModalProps) => {
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const closeHandler = useCallback(() => {
-    setClosing(true);
-    timerRef.current = setTimeout(() => {
-      onClose();
-      setClosing(false);
-    }, CLOSING_DURATION);
+    if (onClose) {
+      setClosing(true);
+      timerRef.current = setTimeout(() => {
+        onClose();
+        setClosing(false);
+      }, CLOSING_DURATION);
+    }
   }, [onClose]);
 
   const keyDownHandler = useCallback(
