@@ -6,6 +6,9 @@ type PortalProps = {
   children: ReactNode;
 };
 
-export const Portal = ({ container = document.body, children }: PortalProps) => {
+export const Portal = ({
+  container = document.getElementById('root') as HTMLElement,
+  children,
+}: PortalProps) => {
   return createPortal(children, container);
 };

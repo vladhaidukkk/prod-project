@@ -7,13 +7,12 @@ const CLOSING_DURATION = 300;
 
 type ModalProps = {
   className?: string;
-  container?: HTMLElement;
   open: boolean;
   onClose: () => void;
   children: ReactNode;
 };
 
-export const Modal = ({ className, container, open, onClose, children }: ModalProps) => {
+export const Modal = ({ className, open, onClose, children }: ModalProps) => {
   const [closing, setClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -50,7 +49,7 @@ export const Modal = ({ className, container, open, onClose, children }: ModalPr
   };
 
   return (
-    <Portal container={container}>
+    <Portal>
       <div className={clsx(cls.modal, { [cls.opened]: open, [cls.closing]: closing }, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={contentClickHandler}>

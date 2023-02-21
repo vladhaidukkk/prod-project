@@ -8,7 +8,6 @@ export default {
   component: Modal,
   args: {
     open: true,
-    container: document.getElementById('root'),
     children:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium nam omnis reprehenderit doloribus dolorum magnam dignissimos fugiat aperiam, consequuntur deleniti tempore molestiae facilis esse, dolor debitis, molestias in optio vel!',
   },
