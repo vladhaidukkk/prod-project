@@ -6,5 +6,7 @@
   "Something went wrong": "Something went wrong",
   "Throw an error": "Throw an error",
   "Reload page": "Reload page",
-  "Log in": "Log in"
+  "Log in": "Log in",
+  "increment": "increment",
+  "decrement": "decrement"
 }

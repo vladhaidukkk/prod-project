@@ -1,0 +1,14 @@
+{
+  "Create Jest test": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "jtst",
+    "body": [
+      "describe('$1', () => {",
+      "  test('$2', () => {",
+      "    expect($3);",
+      "  });",
+      "});"
+    ],
+    "description": "Create a new Jest test"
+  }
+}
