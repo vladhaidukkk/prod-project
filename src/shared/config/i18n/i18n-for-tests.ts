@@ -7,6 +7,7 @@ void i18nForTests.use(initReactI18next).init({
     escapeValue: false,
   },
   resources: { en: { translations: {} } },
+  returnNull: false,
 });
 
 export default i18nForTests;

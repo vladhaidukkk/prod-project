@@ -8,5 +8,7 @@
   "Reload page": "Reload page",
   "Log in": "Log in",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Enter username": "Enter username",
+  "Enter password": "Enter password"
 }

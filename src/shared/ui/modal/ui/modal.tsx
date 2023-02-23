@@ -9,11 +9,13 @@ type ModalProps = {
   className?: string;
   open: boolean;
   onClose?: () => void;
+  lazy?: boolean;
   children: ReactNode;
 };
 
-export const Modal = ({ className, open, onClose, children }: ModalProps) => {
+export const Modal = ({ className, open, onClose, lazy, children }: ModalProps) => {
   const [closing, setClosing] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const closeHandler = useCallback(() => {
@@ -37,6 +39,7 @@ export const Modal = ({ className, open, onClose, children }: ModalProps) => {
 
   useEffect(() => {
     if (open) {
+      setMounted(true);
       window.addEventListener('keydown', keyDownHandler);
     }
 
@@ -49,6 +52,10 @@ export const Modal = ({ className, open, onClose, children }: ModalProps) => {
   const contentClickHandler = (event: MouseEvent) => {
     event.stopPropagation();
   };
+
+  if (lazy && !mounted) {
+    return null;
+  }
 
   return (
     <Portal>

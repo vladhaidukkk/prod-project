@@ -24,6 +24,12 @@
   transform: scale(0.5);
 }
 
+.modal.opening {
+  .content {
+    transform: scale(0.2);
+  }
+}
+
 .modal.opened {
   z-index: var(--modal-z-index);
   pointer-events: auto;

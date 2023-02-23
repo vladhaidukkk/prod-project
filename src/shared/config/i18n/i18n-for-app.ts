@@ -17,6 +17,7 @@ void i18nForApp
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
+    returnNull: false,
   });
 
 export default i18nForApp;
