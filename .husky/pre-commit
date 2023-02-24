@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Lint TypeScript"
+npm run lint:ts
+
+echo "Lint Styles"
+npm run lint:scss
+
+echo "Check Code Style"
+npm run format:check
+
+echo "Run Unit Tests"
+npm run test:unit
+
+echo "Build Storybook"
+npm run storybook:build
+
+# Need to start Docker manually before
+echo "Run Screenshot Tests"
+npm run test:ui:ci
+
+echo "Build Production Bundle"
+npm run build:prod
