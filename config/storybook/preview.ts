@@ -4,7 +4,6 @@ import {
   GlobalStylesDecorator,
   ThemeDecorator,
   RouterDecorator,
-  TranslationsDecorator,
 } from '../../src/shared/config/storybook';
 
 export const parameters = {
@@ -20,5 +19,4 @@ export const parameters = {
 // Or we can just import global styles in preview.ts, without decorator
 addDecorator(GlobalStylesDecorator);
 addDecorator(RouterDecorator);
-addDecorator(TranslationsDecorator);
 addDecorator(ThemeDecorator(Themes.Light));
