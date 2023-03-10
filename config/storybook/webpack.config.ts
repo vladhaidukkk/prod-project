@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { type RuleSetRule, type Configuration } from 'webpack';
+import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack';
 import { type BuildOptions, type BuildPaths } from '../build/types/config';
 import { buildSassLoader } from '../build/loaders/build-sass-loader';
 import { buildSvgLoader } from '../build/loaders/build-svg-loader';
@@ -23,8 +23,8 @@ export default ({ config }: WebpackInterceptorOptions): Configuration => {
     analyzeBundle: false,
   };
 
-  // Enable absolute paths
-  config.resolve?.modules?.push(paths.src);
+  // Enable absolute paths + with unshift Storybook will search in src and after that in node_modules
+  config.resolve?.modules?.unshift(paths.src);
 
   if (config.module?.rules) {
     // Exclude svg from all loaders
@@ -45,6 +45,13 @@ export default ({ config }: WebpackInterceptorOptions): Configuration => {
     // Add custom loaders
     config.module?.rules?.push(buildSvgLoader());
     config.module?.rules?.push(buildSassLoader(buildOptions));
+
+    // Add custom plugins
+    config.plugins?.push(
+      new DefinePlugin({
+        __IS_DEV__: true,
+      })
+    );
   }
 
   return config;

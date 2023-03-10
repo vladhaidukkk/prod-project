@@ -4,6 +4,8 @@ import { LoginModal } from 'features/auth-by-username';
 import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
 import cls from './navbar.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions, selectAuthViewer } from 'entities/auth';
 
 type NavbarProps = {
   className?: string;
@@ -11,6 +13,8 @@ type NavbarProps = {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const viewer = useSelector(selectAuthViewer);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   const showLoginModalHandler = useCallback(() => {
@@ -20,6 +24,20 @@ export const Navbar = ({ className }: NavbarProps) => {
   const closeLoginModalHandler = useCallback(() => {
     setLoginModalOpen(false);
   }, []);
+
+  const logoutHandler = useCallback(() => {
+    dispatch(authActions.loggedOut());
+  }, [dispatch]);
+
+  if (viewer) {
+    return (
+      <nav className={clsx(cls.navbar, {}, [className])}>
+        <Button variant="text" inverted onClick={logoutHandler}>
+          {t('Log out')}
+        </Button>
+      </nav>
+    );
+  }
 
   return (
     <nav className={clsx(cls.navbar, {}, [className])}>

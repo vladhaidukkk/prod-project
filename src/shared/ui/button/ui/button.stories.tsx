@@ -56,6 +56,11 @@ FilledPrimaryCompact.args = {
   compact: true,
 };
 
+export const FilledPrimaryDisabled = Template.bind({});
+FilledPrimaryDisabled.args = {
+  disabled: true,
+};
+
 export const FilledPrimaryDark = Template.bind({});
 FilledPrimaryDark.decorators = [ThemeDecorator(Themes.Dark)];
 
@@ -126,6 +131,12 @@ export const OutlinedPrimaryCompact = Template.bind({});
 OutlinedPrimaryCompact.args = {
   variant: 'outlined',
   compact: true,
+};
+
+export const OutlinedPrimaryDisabled = Template.bind({});
+OutlinedPrimaryDisabled.args = {
+  variant: 'outlined',
+  disabled: true,
 };
 
 export const OutlinedPrimaryDark = Template.bind({});
@@ -204,6 +215,12 @@ export const TextPrimaryCompact = Template.bind({});
 TextPrimaryCompact.args = {
   variant: 'text',
   compact: true,
+};
+
+export const TextPrimaryDisabled = Template.bind({});
+TextPrimaryDisabled.args = {
+  variant: 'text',
+  disabled: true,
 };
 
 export const TextPrimaryDark = Template.bind({});
