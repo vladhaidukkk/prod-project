@@ -12,6 +12,6 @@
   "Enter username": "Введіть ім'я користувача",
   "Enter password": "Введіть пароль",
   "Login Form": "Форма Входу",
-  "You entered the wrong username or password": "Ви ввели неправильний логін або пароль",
+  "You entered the wrong login or password": "Ви ввели неправильний логін або пароль",
   "Log out": "Вийти"
 }

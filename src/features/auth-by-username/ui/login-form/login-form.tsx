@@ -37,7 +37,7 @@ export const LoginForm = memo(() => {
   return (
     <div className={clsx(cls.loginForm, {}, [])}>
       <Text title={t('Login Form')} />
-      {error && <Text text={t('You entered the wrong username or password')} color="error" />}
+      {error && <Text text={t('You entered the wrong login or password')} color="error" />}
       <Input
         value={username}
         onChange={changeUsernameHandler}
