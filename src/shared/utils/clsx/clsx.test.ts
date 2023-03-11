@@ -1,6 +1,6 @@
 import { clsx } from './clsx';
 
-describe('clsx util', () => {
+describe('(Utility function): clsx', () => {
   test('with only main class', () => {
     const res = clsx('main');
     const expected = 'main';

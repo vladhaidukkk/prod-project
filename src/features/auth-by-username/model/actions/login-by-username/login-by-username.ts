@@ -3,7 +3,7 @@ import axios from 'axios';
 import { authActions, type Viewer } from 'entities/auth';
 import { LOCAL_STORAGE_VIEWER_KEY } from 'shared/consts/local-storage';
 
-type LoginByUsernameArgs = {
+type LoginByUsernameArg = {
   username: string;
   password: string;
 };
@@ -14,11 +14,11 @@ type LoginByUsernameThunkAPI = {
 
 export const loginByUsername = createAsyncThunk<
   Viewer,
-  LoginByUsernameArgs,
+  LoginByUsernameArg,
   LoginByUsernameThunkAPI
->('login/loginByUsername', async (args, { dispatch, rejectWithValue }) => {
+>('login/loginByUsername', async (arg, { dispatch, rejectWithValue }) => {
   try {
-    const { data } = await axios.post<Viewer>('http://localhost:8000/login', args);
+    const { data } = await axios.post<Viewer>('http://localhost:8000/login', arg);
 
     // It's a very bad practice to have side effects inside actions: https://stackoverflow.com/questions/35305661/where-to-write-to-localstorage-in-a-redux-app
     localStorage.setItem(LOCAL_STORAGE_VIEWER_KEY, JSON.stringify(data));

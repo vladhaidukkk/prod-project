@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Button } from './button';
 
-describe('Button component', () => {
+describe('(Shared component): Button', () => {
   test('should render with text', () => {
     render(<Button>Text</Button>);
     expect(screen.getByText('Text')).toBeInTheDocument();

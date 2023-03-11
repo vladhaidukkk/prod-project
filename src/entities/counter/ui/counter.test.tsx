@@ -2,7 +2,7 @@ import { screen, fireEvent } from '@testing-library/react';
 import { renderWithProviders } from 'shared/utils/tests';
 import { Counter } from './counter';
 
-describe('Counter entity component', () => {
+describe('(Entity component): Counter', () => {
   test('should render with proper counter value', () => {
     renderWithProviders(<Counter />, {
       initialState: { counter: { value: 10 } },

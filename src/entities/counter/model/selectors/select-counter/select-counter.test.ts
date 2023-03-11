@@ -2,7 +2,7 @@ import { type DeepPartial } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/store-provider';
 import { selectCounter } from './select-counter';
 
-describe('selectCounter selector', () => {
+describe('(Selector): selectCounter', () => {
   test('should return counter state', () => {
     const state: DeepPartial<StateSchema> = {
       counter: {

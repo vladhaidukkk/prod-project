@@ -2,7 +2,7 @@ import { type DeepPartial } from '@reduxjs/toolkit';
 import { type CounterSchema } from 'entities/counter/types';
 import { counterActions, counterReducer } from './counter-slice';
 
-describe('counterReducer reducer', () => {
+describe('(Reducer): counterReducer', () => {
   test('should increment counter value', () => {
     const counterState: DeepPartial<CounterSchema> = {
       value: 10,

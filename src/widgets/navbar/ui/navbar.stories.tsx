@@ -19,12 +19,12 @@ Dark.decorators = [StoreDecorator({}), ThemeDecorator(Themes.Dark)];
 export const Logged = Template.bind({});
 Logged.decorators = [
   StoreDecorator({
-    auth: { viewer: { id: 1, username: 'username' } },
+    auth: { viewer: { id: '1', username: 'username' } },
   }),
 ];
 
 export const LoggedDark = Template.bind({});
 LoggedDark.decorators = [
-  StoreDecorator({ auth: { viewer: { id: 1, username: 'username' } } }),
+  StoreDecorator({ auth: { viewer: { id: '1', username: 'username' } } }),
   ThemeDecorator(Themes.Dark),
 ];

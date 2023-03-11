@@ -1,5 +1,5 @@
 export type Viewer = {
-  id: number;
+  id: string;
   username: string;
 };
 

@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { renderWithProviders } from 'shared/utils/tests';
 import { Sidebar } from './sidebar';
 
-describe('Sidebar widget', () => {
+describe('(Widget component): Sidebar', () => {
   test('should render without props', () => {
     renderWithProviders(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
