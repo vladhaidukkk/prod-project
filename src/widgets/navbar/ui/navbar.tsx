@@ -44,7 +44,7 @@ export const Navbar = ({ className }: NavbarProps) => {
       <Button variant="text" inverted onClick={showLoginModalHandler}>
         {t('Log in')}
       </Button>
-      <LoginModal open={loginModalOpen} onClose={closeLoginModalHandler} />
+      {loginModalOpen && <LoginModal open={loginModalOpen} onClose={closeLoginModalHandler} />}
     </nav>
   );
 };

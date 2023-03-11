@@ -1,11 +1,25 @@
-import { type DeepPartial } from '@reduxjs/toolkit';
+import { type ReducersMapObject, type DeepPartial } from '@reduxjs/toolkit';
 import { type Story } from '@storybook/react';
 import { type StateSchema, StoreProvider } from 'app/providers/store-provider';
+import { loginReducer } from 'features/auth-by-username/model';
+
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+  // @ts-ignore
+  login: loginReducer,
+};
 
 export const StoreDecorator =
-  (initialState: DeepPartial<StateSchema>) => (StoryComponent: Story) => {
+  (
+    initialState: DeepPartial<StateSchema>,
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+  ) =>
+  (StoryComponent: Story) => {
     return (
-      <StoreProvider initialState={initialState as StateSchema}>
+      <StoreProvider
+        initialState={initialState as StateSchema}
+        asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+      >
         <StoryComponent />
       </StoreProvider>
     );

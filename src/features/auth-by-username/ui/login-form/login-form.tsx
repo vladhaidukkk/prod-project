@@ -1,4 +1,4 @@
-import { loginActions, loginByUsername, selectLoginState } from 'features/auth-by-username/model';
+import { loginActions, loginByUsername, loginReducer, selectLoginState } from '../../model';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,12 +7,23 @@ import { Input } from 'shared/ui/input';
 import { Text } from 'shared/ui/text';
 import { clsx } from 'shared/utils/clsx';
 import cls from './login-form.module.scss';
+import { type ReducersRecord, useAsyncReducers } from 'shared/utils/hooks';
 
-export const LoginForm = memo(() => {
+// It won't cause redundant re-rendering as it's always the same ref. In our case it's not very important because useAsyncReducers hook don't have reducers as a dependency for inner useEffect.
+const asyncReducers: ReducersRecord = {
+  login: {
+    reducer: loginReducer,
+    destroy: true,
+  },
+};
+
+const LoginForm = memo(() => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   // Component will rerender on each loginState change because we select the whole state (even if we don't use password for example). That's why it's better to split selectors on atoms (the smallest units). In this case we can select the whole state because we use all fields from there.
   const { username, password, loading, error } = useSelector(selectLoginState);
+
+  useAsyncReducers(asyncReducers);
 
   const changeUsernameHandler = useCallback(
     (value: string) => {
@@ -51,3 +62,5 @@ export const LoginForm = memo(() => {
     </div>
   );
 });
+
+export default LoginForm;

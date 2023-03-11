@@ -1,7 +1,7 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook';
 import { Themes } from 'shared/config/theme';
-import { LoginForm } from './login-form';
+import LoginForm from './login-form';
 
 export default {
   title: 'features/LoginForm',
@@ -13,6 +13,8 @@ const Template: ComponentStory<typeof LoginForm> = () => <LoginForm />;
 export const Light = Template.bind({});
 Light.decorators = [
   StoreDecorator({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+    // @ts-ignore
     login: {
       username: 'username',
       password: 'password',
@@ -23,6 +25,8 @@ Light.decorators = [
 export const Dark = Template.bind({});
 Dark.decorators = [
   StoreDecorator({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+    // @ts-ignore
     login: {
       username: 'username',
       password: 'password',
@@ -57,6 +61,8 @@ LoadingDark.decorators = [
 export const WithError = Template.bind({});
 WithError.decorators = [
   StoreDecorator({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+    // @ts-ignore
     login: {
       username: 'username',
       password: 'password',
@@ -68,6 +74,8 @@ WithError.decorators = [
 export const WithErrorDark = Template.bind({});
 WithErrorDark.decorators = [
   StoreDecorator({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+    // @ts-ignore
     login: {
       username: 'username',
       password: 'password',
