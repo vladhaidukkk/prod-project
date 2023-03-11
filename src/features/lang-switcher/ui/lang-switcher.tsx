@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
@@ -7,7 +8,7 @@ type LangSwitcherProps = {
   short?: boolean;
 };
 
-export const LangSwitcher = ({ className, short = false }: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className, short = false }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const handleToggle = () => {
@@ -19,4 +20,4 @@ export const LangSwitcher = ({ className, short = false }: LangSwitcherProps) =>
       {short ? t('Language Short') : t('Language')}
     </Button>
   );
-};
+});

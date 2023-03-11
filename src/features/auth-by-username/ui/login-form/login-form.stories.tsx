@@ -8,7 +8,7 @@ export default {
   component: LoginForm,
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = () => <LoginForm />;
+const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const Light = Template.bind({});
 Light.decorators = [

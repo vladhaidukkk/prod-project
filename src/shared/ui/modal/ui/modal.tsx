@@ -13,6 +13,7 @@ type ModalProps = {
   children: ReactNode;
 };
 
+// memo is useless here, because we have children and they change very often + it is bad to store so much data
 export const Modal = ({ className, open, onClose, lazy, children }: ModalProps) => {
   const [closing, setClosing] = useState(false);
   const [mounted, setMounted] = useState(false);

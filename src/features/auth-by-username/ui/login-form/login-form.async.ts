@@ -1,7 +1,7 @@
-import { lazy } from 'react';
+import { lazy, type FC } from 'react';
+import { type LoginFormProps } from './login-form';
 
-// Because of memo and lazy we lose typing for props, so we can fix it with lazy<FC<Props>>(...)
-export const LoginFormAsync = lazy(
+export const LoginFormAsync = lazy<FC<LoginFormProps>>(
   () =>
     new Promise((resolve) => {
       // It's a pseudo delay only for demonstration purpose

@@ -1,19 +1,20 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/auth-by-username';
 import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
 import cls from './navbar.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { authActions, selectAuthViewer } from 'entities/auth';
+import { useAppDispatch } from 'shared/utils/hooks';
 
 type NavbarProps = {
   className?: string;
 };
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const viewer = useSelector(selectAuthViewer);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
 
@@ -47,4 +48,4 @@ export const Navbar = ({ className }: NavbarProps) => {
       {loginModalOpen && <LoginModal open={loginModalOpen} onClose={closeLoginModalHandler} />}
     </nav>
   );
-};
+});

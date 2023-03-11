@@ -30,3 +30,5 @@ export function initStore(
 
   return store;
 }
+
+export type AppDispatch = ReturnType<typeof initStore>['dispatch'];

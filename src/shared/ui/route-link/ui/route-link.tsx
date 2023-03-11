@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { memo } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { clsx } from 'shared/utils/clsx';
 import { RouteLinkVariants } from '../consts';
@@ -9,15 +9,12 @@ type RouteLinkProps = {
   variant?: RouteLinkVariants;
 } & LinkProps;
 
-export const RouteLink: FC<RouteLinkProps> = ({
-  className,
-  variant = RouteLinkVariants.Primary,
-  children,
-  ...restProps
-}) => {
-  return (
-    <Link className={clsx('', {}, [className, cls[variant]])} {...restProps}>
-      {children}
-    </Link>
-  );
-};
+export const RouteLink = memo(
+  ({ className, variant = RouteLinkVariants.Primary, children, ...restProps }: RouteLinkProps) => {
+    return (
+      <Link className={clsx('', {}, [className, cls[variant]])} {...restProps}>
+        {children}
+      </Link>
+    );
+  }
+);

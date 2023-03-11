@@ -53,6 +53,7 @@
       }
     ],
     "@typescript-eslint/no-dynamic-delete": "off",
+    "@typescript-eslint/no-misused-promises": "warn",
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "error",

@@ -2,13 +2,13 @@ import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
 import { Routing } from './routes';
 import cls from './app.module.scss';
-import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { LOCAL_STORAGE_VIEWER_KEY } from 'shared/consts/local-storage';
 import { authActions } from 'entities/auth';
+import { useAppDispatch } from 'shared/utils/hooks';
 
 export const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const viewer = localStorage.getItem(LOCAL_STORAGE_VIEWER_KEY);
