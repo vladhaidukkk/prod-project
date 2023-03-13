@@ -24,6 +24,7 @@ export default async () => {
     testPathIgnorePatterns: ['/node_modules/'],
     globals: {
       __IS_DEV__: true,
+      __API__: '',
     },
   };
 

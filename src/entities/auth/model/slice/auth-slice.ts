@@ -13,7 +13,7 @@ const authSlice = createSlice({
     },
     loggedOut: (state) => {
       state.viewer = undefined;
-      // It's a very bad practice
+      // It's a very bad practice: https://stackoverflow.com/questions/35305661/where-to-write-to-localstorage-in-a-redux-app
       localStorage.removeItem(LOCAL_STORAGE_VIEWER_KEY);
     },
   },

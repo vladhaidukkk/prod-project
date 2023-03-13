@@ -7,10 +7,10 @@ import { Input } from 'shared/ui/input';
 import { Text } from 'shared/ui/text';
 import { clsx } from 'shared/utils/clsx';
 import cls from './login-form.module.scss';
-import { type ReducersRecord, useAsyncReducers, useAppDispatch } from 'shared/utils/hooks';
+import { type AsyncReducersMap, useAsyncReducers, useAppDispatch } from 'shared/utils/hooks';
 
 // It won't cause redundant re-rendering as it's always the same ref. In our case it's not very important because useAsyncReducers hook don't have reducers as a dependency for inner useEffect.
-const asyncReducers: ReducersRecord = {
+const asyncReducers: AsyncReducersMap = {
   login: {
     reducer: loginReducer,
     destroy: true,

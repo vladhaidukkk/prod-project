@@ -4,7 +4,7 @@ import {
   type ReducersMapObject,
   type Reducer,
 } from '@reduxjs/toolkit';
-import { type ReducerManager, type StateSchema, type StateSchemaKey } from '../types';
+import { type ReducerManager, type StateSchema, type AsyncStateSchemaKey } from '../types';
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>
@@ -13,7 +13,7 @@ export function createReducerManager(
 
   let combinedReducer = combineReducers(reducers);
 
-  let keysToRemove: StateSchemaKey[] = [];
+  let keysToRemove: AsyncStateSchemaKey[] = [];
 
   return {
     getReducerMap: () => reducers,
@@ -28,7 +28,7 @@ export function createReducerManager(
 
       return combinedReducer(state, action);
     },
-    add: (key: StateSchemaKey, reducer: Reducer) => {
+    add: (key: AsyncStateSchemaKey, reducer: Reducer) => {
       if (!key || reducers[key]) {
         return false;
       }
@@ -37,7 +37,7 @@ export function createReducerManager(
       combinedReducer = combineReducers(reducers);
       return true;
     },
-    remove: (key: StateSchemaKey) => {
+    remove: (key: AsyncStateSchemaKey) => {
       if (!key || !reducers[key]) {
         return false;
       }

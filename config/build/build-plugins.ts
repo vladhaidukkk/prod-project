@@ -12,6 +12,7 @@ import { type BuildOptions } from './types/config';
 export function buildPlugins({
   paths,
   isDev,
+  api,
   analyzeBundle,
 }: BuildOptions): WebpackPluginInstance[] {
   const plugins: WebpackPluginInstance[] = [
@@ -25,6 +26,7 @@ export function buildPlugins({
     }),
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(api),
     }),
   ];
 

@@ -1,16 +1,19 @@
-import { type DeepPartial, type ReducersMapObject } from '@reduxjs/toolkit';
 import { type ReactNode } from 'react';
 import { Provider } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { initStore } from '../config/store';
-import { type StateSchema } from '../types';
+import { type StateSchema, type AsyncReducers } from '../types';
 
 type StoreProviderProps = {
   initialState?: StateSchema;
-  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
+  asyncReducers?: AsyncReducers;
   children: ReactNode;
 };
 
 export const StoreProvider = ({ initialState, asyncReducers, children }: StoreProviderProps) => {
-  const store = initStore(initialState, asyncReducers);
+  const navigate = useNavigate();
+
+  const store = initStore({ navigate, initialState, asyncReducers });
+
   return <Provider store={store}>{children}</Provider>;
 };

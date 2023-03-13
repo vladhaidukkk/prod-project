@@ -1,4 +1,3 @@
-import { type DeepPartial } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/store-provider';
 import { type LoginSchema } from 'features/auth-by-username/types';
 import { selectLoginState } from './select-login-state';

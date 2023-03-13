@@ -1,9 +1,8 @@
-import { profileReducer } from 'entities/profile';
-import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { type ReducersRecord, useAsyncReducers } from 'shared/utils/hooks';
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/profile';
+import { memo, useEffect } from 'react';
+import { type AsyncReducersMap, useAsyncReducers, useAppDispatch } from 'shared/utils/hooks';
 
-const asyncReducers: ReducersRecord = {
+const asyncReducers: AsyncReducersMap = {
   profile: {
     reducer: profileReducer,
     destroy: true,
@@ -11,11 +10,19 @@ const asyncReducers: ReducersRecord = {
 };
 
 const ProfilePage = memo(() => {
-  const { t } = useTranslation('profile');
+  const dispatch = useAppDispatch();
 
   useAsyncReducers(asyncReducers);
 
-  return <div>{t('Profile Page')}</div>;
+  useEffect(() => {
+    void dispatch(fetchProfileData());
+  }, [dispatch]);
+
+  return (
+    <div>
+      <ProfileCard />
+    </div>
+  );
 });
 
 export default ProfilePage;

@@ -1,17 +1,20 @@
 import { type Reducer } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { type StateSchemaKey, type StoreWithManager } from 'app/providers/store-provider/types';
+import {
+  type AsyncStateSchemaKey,
+  type StoreWithManager,
+} from 'app/providers/store-provider/types';
 import { typedEntries } from 'shared/utils/helpers';
 
-export type ReducersRecord = {
-  [key in StateSchemaKey]?: {
+export type AsyncReducersMap = {
+  [key in AsyncStateSchemaKey]?: {
     reducer: Reducer;
     destroy?: boolean;
   };
 };
 
-export const useAsyncReducers = (reducers: ReducersRecord) => {
+export const useAsyncReducers = (reducers: AsyncReducersMap) => {
   const store = useStore() as StoreWithManager;
   const dispatch = useDispatch();
 

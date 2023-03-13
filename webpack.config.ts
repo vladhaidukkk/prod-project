@@ -19,11 +19,14 @@ export default (env: BuildEnv) => {
     html: path.resolve(__dirname, 'public', 'index.html'),
   };
 
+  const api = env.api ?? 'http://localhost:8000';
+
   return buildConfig({
     mode,
     port,
     paths,
     isDev,
+    api,
     analyzeBundle: env.analyze,
   });
 };

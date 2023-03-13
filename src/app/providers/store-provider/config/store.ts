@@ -1,31 +1,53 @@
-import { configureStore, type DeepPartial, type ReducersMapObject } from '@reduxjs/toolkit';
+import {
+  type CombinedState,
+  configureStore,
+  type Reducer,
+  type ReducersMapObject,
+} from '@reduxjs/toolkit';
+import { type NavigateFunction } from 'react-router-dom';
 import { authReducer } from 'entities/auth';
 import { counterReducer } from 'entities/counter';
 import { createReducerManager } from './reducer-manager';
-import { type StateSchema } from '../types';
+import {
+  type ThunkExtraArg,
+  type StateSchema,
+  type StoreWithManager,
+  type AsyncReducers,
+} from '../types';
+import { apiClient } from 'shared/api/api-client';
 
-export function initStore(
-  initialState?: StateSchema,
-  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
-) {
+type InitStoreOptions = {
+  navigate: NavigateFunction;
+  initialState?: StateSchema;
+  asyncReducers?: AsyncReducers;
+};
+
+export function initStore({ navigate, initialState, asyncReducers }: InitStoreOptions) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
     auth: authReducer,
   };
-
   const reducerManager = createReducerManager(rootReducers);
 
-  const store = configureStore<StateSchema>({
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
-    // @ts-ignore
-    reducer: reducerManager.reduce,
+  const extraArg: ThunkExtraArg = {
+    api: apiClient,
+    // I think that's a bad practice to have redirects inside actions
+    navigate,
+  };
+
+  const store = configureStore({
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-  });
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: extraArg,
+        },
+      }),
+  }) as StoreWithManager;
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
-  // @ts-ignore
   store.reducerManager = reducerManager;
 
   return store;
