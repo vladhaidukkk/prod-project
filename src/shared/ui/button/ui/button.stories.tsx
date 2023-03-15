@@ -35,6 +35,11 @@ FilledBackgroundInverted.args = {
   inverted: true,
 };
 
+export const FilledError = Template.bind({});
+FilledError.args = {
+  color: 'error',
+};
+
 export const FilledPrimaryLg = Template.bind({});
 FilledPrimaryLg.args = {
   size: 'lg',
@@ -106,6 +111,12 @@ OutlinedBackgroundInverted.args = {
   variant: 'outlined',
   color: 'background',
   inverted: true,
+};
+
+export const OutlinedError = Template.bind({});
+OutlinedError.args = {
+  variant: 'outlined',
+  color: 'error',
 };
 
 export const OutlinedPrimaryLg = Template.bind({});
@@ -190,6 +201,12 @@ TextBackgroundInverted.args = {
   variant: 'text',
   color: 'background',
   inverted: true,
+};
+
+export const TextError = Template.bind({});
+TextError.args = {
+  variant: 'text',
+  color: 'error',
 };
 
 export const TextPrimaryLg = Template.bind({});

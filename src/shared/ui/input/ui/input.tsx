@@ -11,13 +11,15 @@ import {
 import { clsx } from 'shared/utils/clsx';
 import cls from './input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'className' | 'value' | 'onChange'
+>;
 
 type InputProps = {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
-  autofocus?: boolean;
 } & HTMLInputProps;
 
 export const Input = memo(
@@ -27,7 +29,8 @@ export const Input = memo(
     onChange,
     type = 'text',
     placeholder,
-    autofocus,
+    autoFocus,
+    readOnly,
     onFocus,
     onBlur,
     onSelect,
@@ -37,12 +40,14 @@ export const Input = memo(
     const [caretPosition, setCaretPosition] = useState(0);
     const inputRef = useRef<HTMLInputElement>(null);
 
+    const caretVisible = focused && !readOnly;
+
     useEffect(() => {
-      if (autofocus) {
+      if (autoFocus) {
         setFocused(true);
         inputRef.current?.focus();
       }
-    }, [autofocus]);
+    }, [autoFocus]);
 
     const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
       onChange?.(event.target.value);
@@ -75,13 +80,14 @@ export const Input = memo(
             className={cls.input}
             type={type}
             value={value}
+            readOnly={readOnly}
             onChange={changeHandler}
             onFocus={focusHandler}
             onBlur={blurHandler}
             onSelect={selectHandler}
             {...restProps}
           />
-          {focused && (
+          {caretVisible && (
             <span
               className={cls.caret}
               style={{

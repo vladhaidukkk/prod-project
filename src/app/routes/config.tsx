@@ -7,7 +7,11 @@ const AboutPage = lazy(() => import('pages/about'));
 const ProfilePage = lazy(() => import('pages/profile'));
 const NotFoundPage = lazy(() => import('pages/not-found'));
 
-export const routes: RouteProps[] = [
+type AppRouteProps = RouteProps & {
+  authOnly?: boolean;
+};
+
+export const routes: AppRouteProps[] = [
   {
     path: RoutePaths[RouteNames.Main],
     element: <MainPage />,
@@ -19,6 +23,7 @@ export const routes: RouteProps[] = [
   {
     path: RoutePaths[RouteNames.Profile],
     element: <ProfilePage />,
+    authOnly: true,
   },
   {
     path: RoutePaths[RouteNames.NotFound],

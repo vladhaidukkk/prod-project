@@ -13,20 +13,20 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   title: 'Title',
-  text: 'Text',
+  description: 'Description',
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
   title: 'Title',
-  text: 'Text',
+  description: 'Description',
 };
 PrimaryDark.decorators = [ThemeDecorator(Themes.Dark)];
 
 export const Error = Template.bind({});
 Error.args = {
   title: 'Title',
-  text: 'Text',
+  description: 'Description',
   color: 'error',
 };
 
@@ -41,13 +41,13 @@ OnlyTitleDark.args = {
 };
 OnlyTitleDark.decorators = [ThemeDecorator(Themes.Dark)];
 
-export const OnlyText = Template.bind({});
-OnlyText.args = {
-  text: 'Text',
+export const OnlyDescription = Template.bind({});
+OnlyDescription.args = {
+  description: 'Description',
 };
 
-export const OnlyTextDark = Template.bind({});
-OnlyTextDark.args = {
-  text: 'Text',
+export const OnlyDescriptionDark = Template.bind({});
+OnlyDescriptionDark.args = {
+  description: 'Description',
 };
-OnlyTextDark.decorators = [ThemeDecorator(Themes.Dark)];
+OnlyDescriptionDark.decorators = [ThemeDecorator(Themes.Dark)];

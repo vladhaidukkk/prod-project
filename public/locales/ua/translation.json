@@ -14,5 +14,7 @@
   "Enter password": "Введіть пароль",
   "Login Form": "Форма Входу",
   "You entered the wrong login or password": "Ви ввели неправильний логін або пароль",
-  "Log out": "Вийти"
+  "Log out": "Вийти",
+  "Currency": "Валюта",
+  "Country": "Країна"
 }

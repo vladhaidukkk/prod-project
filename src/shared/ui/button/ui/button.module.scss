@@ -22,6 +22,11 @@
   background: var(--inverted-bg-color);
 }
 
+.filled.error {
+  color: var(--red-light-color);
+  background: var(--red-dark-color);
+}
+
 .outlined.primary {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -42,6 +47,11 @@
   border: 1px solid var(--inverted-bg-color);
 }
 
+.outlined.error {
+  color: var(--red-light-color);
+  border: 1px solid var(--red-light-color);
+}
+
 .text.primary {
   color: var(--primary-color);
 }
@@ -56,6 +66,10 @@
 
 .text.background.inverted {
   color: var(--inverted-bg-color);
+}
+
+.text.error {
+  color: var(--red-light-color);
 }
 
 .base {

@@ -1,8 +1,20 @@
+.text.left {
+  text-align: left;
+}
+
+.text.center {
+  text-align: center;
+}
+
+.text.right {
+  text-align: right;
+}
+
 .title {
   font: var(--font-lg);
 }
 
-.text {
+.description {
   font: var(--font-base);
 }
 
@@ -11,7 +23,7 @@
     color: var(--primary-color);
   }
 
-  .text {
+  .description {
     color: var(--secondary-color);
   }
 }
@@ -21,7 +33,7 @@
     color: var(--red-light-color);
   }
 
-  .text {
+  .description {
     color: var(--red-dark-color);
   }
 }

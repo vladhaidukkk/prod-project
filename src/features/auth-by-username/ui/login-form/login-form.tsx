@@ -53,12 +53,12 @@ const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
   return (
     <div className={clsx(cls.loginForm, {}, [])}>
       <Text title={t('Login Form')} />
-      {error && <Text text={t('You entered the wrong login or password')} color="error" />}
+      {error && <Text description={t('You entered the wrong login or password')} color="error" />}
       <Input
         value={username}
         onChange={changeUsernameHandler}
         placeholder={t('Enter username')}
-        autofocus
+        autoFocus
       />
       <Input value={password} onChange={changePasswordHandler} placeholder={t('Enter password')} />
       <Button className={cls.loginBtn} variant="outlined" onClick={loginHandler} disabled={loading}>
