@@ -7,13 +7,17 @@ import {
   selectProfileForm,
   selectProfileLoading,
   selectProfileReadonly,
+  selectProfileValidationErrors,
+  ProfileValidationError,
 } from 'entities/profile';
 import { memo, useCallback, useEffect } from 'react';
 import { type Country } from 'shared/consts/country';
 import { type Currency } from 'shared/consts/currency';
 import { type AsyncReducersMap, useAsyncReducers, useAppDispatch } from 'shared/utils/hooks';
 import { useAppSelector } from 'shared/utils/hooks';
+import { Text } from 'shared/ui/text';
 import { ProfileHeader } from './profile-header/profile-header';
+import { useTranslation } from 'react-i18next';
 
 const asyncReducers: AsyncReducersMap = {
   profile: {
@@ -23,11 +27,20 @@ const asyncReducers: AsyncReducersMap = {
 };
 
 const ProfilePage = memo(() => {
+  const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
   const formData = useAppSelector(selectProfileForm);
   const loading = useAppSelector(selectProfileLoading);
   const error = useAppSelector(selectProfileError);
   const readonly = useAppSelector(selectProfileReadonly);
+  const validationErrors = useAppSelector(selectProfileValidationErrors);
+
+  const validationErrorTranslations: Record<ProfileValidationError, string> = {
+    [ProfileValidationError.NoData]: t('Data was not provided'),
+    [ProfileValidationError.IncorrectUserName]: t('Name or surname is incorrect'),
+    [ProfileValidationError.IncorrectUserAge]: t('Age is incorrect'),
+    [ProfileValidationError.IncorrectUserCountry]: t('Country is incorrect'),
+  };
 
   useAsyncReducers(asyncReducers);
 
@@ -126,6 +139,9 @@ const ProfilePage = memo(() => {
   return (
     <div>
       <ProfileHeader />
+      {validationErrors?.map((err) => (
+        <Text key={err} description={validationErrorTranslations[err]} color="error" />
+      ))}
       <ProfileCard
         data={formData}
         loading={loading}

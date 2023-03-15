@@ -1,5 +1,6 @@
 import { type Country } from 'shared/consts/country';
 import { type Currency } from 'shared/consts/currency';
+import { type ProfileValidationError, type ProfileError } from './consts';
 
 export type Profile = {
   first?: string;
@@ -16,6 +17,7 @@ export type ProfileSchema = {
   data?: Profile;
   form?: Profile;
   loading: boolean;
-  error?: string;
+  error?: ProfileError;
   readonly: boolean;
+  validationErrors?: ProfileValidationError[];
 };

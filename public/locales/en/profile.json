@@ -10,5 +10,9 @@
   "Your age": "Your age",
   "Your city": "Your city",
   "Your username": "Your username",
-  "Your avatar": "Your avatar"
+  "Your avatar": "Your avatar",
+  "Name or surname is incorrect": "Name or surname is incorrect",
+  "Age is incorrect": "Age is incorrect",
+  "Country is incorrect": "Country is incorrect",
+  "Data was not provided": "Data was not provided"
 }

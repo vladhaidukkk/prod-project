@@ -10,5 +10,9 @@
   "Your age": "Ваш вік",
   "Your city": "Ваше місто",
   "Your username": "Ваше ім'я користувача",
-  "Your avatar": "Ваш аватар"
+  "Your avatar": "Ваш аватар",
+  "Name or surname is incorrect": "Ім'я або прізвище вказано невірно",
+  "Age is incorrect": "Вік вказано невірно",
+  "Country is incorrect": "Країну вказано невірно",
+  "Data was not provided": "Дані не були вказані"
 }
