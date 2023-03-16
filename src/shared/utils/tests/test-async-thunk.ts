@@ -7,13 +7,16 @@ jest.mock('axios');
 
 export class TestAsyncThunk<Returned, ThunkArg, RejectedValue> {
   readonly dispatch: Dispatch = jest.fn();
-  readonly getState: () => StateSchema = jest.fn();
+  readonly getState: () => StateSchema;
   readonly api = jest.mocked(axios);
   readonly navigate: NavigateFunction = jest.fn();
 
   constructor(
-    private readonly asyncThunk: AsyncThunk<Returned, ThunkArg, ThunkConfig<RejectedValue>>
-  ) {}
+    private readonly asyncThunk: AsyncThunk<Returned, ThunkArg, ThunkConfig<RejectedValue>>,
+    state?: DeepPartial<StateSchema>
+  ) {
+    this.getState = jest.fn(() => state as StateSchema);
+  }
 
   exec(arg: ThunkArg) {
     const action = this.asyncThunk(arg);

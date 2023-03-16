@@ -25,5 +25,6 @@ export type BuildOptions = {
   paths: BuildPaths;
   isDev: boolean;
   api: string;
+  project: 'frontend' | 'storybook' | 'jest';
   analyzeBundle: boolean;
 };

@@ -27,6 +27,7 @@ export default (env: BuildEnv) => {
     paths,
     isDev,
     api,
+    project: 'frontend',
     analyzeBundle: env.analyze,
   });
 };

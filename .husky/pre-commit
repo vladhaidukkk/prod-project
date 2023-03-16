@@ -13,12 +13,12 @@ npm run format:check
 echo "Run Unit Tests"
 npm run test:unit
 
-# echo "Build Storybook"
-# npm run storybook:build
+echo "Build Storybook"
+npm run storybook:build
 
 # Need to start Docker manually before
-# echo "Run Screenshot Tests"
-# npm run test:ui:ci
+echo "Run Screenshot Tests"
+npm run test:ui
 
 echo "Build Production Bundle"
 npm run build:prod

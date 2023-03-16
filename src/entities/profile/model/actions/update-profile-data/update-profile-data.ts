@@ -7,7 +7,7 @@ import { selectProfileForm } from '../../selectors/select-profile-form/select-pr
 
 export const updateProfileData = createAsyncThunk<
   Profile,
-  undefined,
+  void,
   ThunkConfig<ProfileError | ProfileValidationError[]>
 >('profile/updateProfileData', async (_arg, { rejectWithValue, extra, getState }) => {
   const formData = selectProfileForm(getState());

@@ -13,6 +13,7 @@ export function buildPlugins({
   paths,
   isDev,
   api,
+  project,
   analyzeBundle,
 }: BuildOptions): WebpackPluginInstance[] {
   const plugins: WebpackPluginInstance[] = [
@@ -27,6 +28,7 @@ export function buildPlugins({
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(api),
+      __PROJECT__: JSON.stringify(project),
     }),
   ];
 

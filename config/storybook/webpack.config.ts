@@ -21,6 +21,7 @@ export default ({ config }: WebpackInterceptorOptions): Configuration => {
     paths,
     isDev: true, // For Storybook we only need style-loader without MiniCssExtractPlugin.loader
     api: '',
+    project: 'storybook',
     analyzeBundle: false,
   };
 
@@ -52,6 +53,7 @@ export default ({ config }: WebpackInterceptorOptions): Configuration => {
       new DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook'),
       })
     );
   }

@@ -6,4 +6,4 @@ export { selectProfileForm } from './selectors/select-profile-form/select-profil
 export { selectProfileError } from './selectors/select-profile-error/select-profile-error';
 export { selectProfileLoading } from './selectors/select-profile-loading/select-profile-loading';
 export { selectProfileReadonly } from './selectors/select-profile-readonly/select-profile-readonly';
-export { selectProfileValidationErrors } from './selectors/select-validation-errors/select-validation-errors';
+export { selectProfileValidationErrors } from './selectors/select-profile-validation-errors/select-validation-errors';
