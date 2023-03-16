@@ -11,7 +11,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     buildFileLoader(),
     buildSvgLoader(),
     buildSassLoader(options),
-    buildBabelLoader(),
+    buildBabelLoader(options),
     buildTypescriptLoader(),
   ];
 }
