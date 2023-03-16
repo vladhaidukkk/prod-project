@@ -14,6 +14,7 @@ export function buildConfig(options: BuildOptions): Configuration {
     output: {
       filename: '[name].[contenthash:8].js',
       path: paths.output,
+      publicPath: '/',
       clean: true,
     },
     devtool: isDev ? 'inline-source-map' : undefined,

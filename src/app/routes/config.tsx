@@ -5,6 +5,8 @@ import { type AppRouteProps } from './types';
 const MainPage = lazy(() => import('pages/main'));
 const AboutPage = lazy(() => import('pages/about'));
 const ProfilePage = lazy(() => import('pages/profile'));
+const ArticlesPage = lazy(() => import('pages/articles'));
+const ArticleDetailsPage = lazy(() => import('pages/article-details'));
 const NotFoundPage = lazy(() => import('pages/not-found'));
 
 export const routes: AppRouteProps[] = [
@@ -19,6 +21,16 @@ export const routes: AppRouteProps[] = [
   {
     path: RoutePaths[RouteNames.Profile],
     element: <ProfilePage />,
+    authRequired: true,
+  },
+  {
+    path: RoutePaths[RouteNames.Articles],
+    element: <ArticlesPage />,
+    authRequired: true,
+  },
+  {
+    path: RoutePaths[RouteNames.ArticleDetails] + ':id',
+    element: <ArticleDetailsPage />,
     authRequired: true,
   },
   {
