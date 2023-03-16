@@ -4,18 +4,16 @@ import { Routing } from './routes';
 import cls from './app.module.scss';
 import { useEffect } from 'react';
 import { LOCAL_STORAGE_VIEWER_KEY } from 'shared/consts/local-storage';
-import { authActions } from 'entities/auth';
-import { useAppDispatch } from 'shared/utils/hooks';
+import { authActions, selectAuthInitialized } from 'entities/auth';
+import { useAppDispatch, useAppSelector } from 'shared/utils/hooks';
 
 export const App = () => {
   const dispatch = useAppDispatch();
+  const initialized = useAppSelector(selectAuthInitialized);
 
   useEffect(() => {
     const viewer = localStorage.getItem(LOCAL_STORAGE_VIEWER_KEY);
-
-    if (viewer) {
-      dispatch(authActions.authenticated(JSON.parse(viewer)));
-    }
+    dispatch(authActions.initialized(viewer ? JSON.parse(viewer) : undefined));
   }, [dispatch]);
 
   return (
@@ -23,7 +21,7 @@ export const App = () => {
       <Navbar />
       <div className={cls.appContent}>
         <Sidebar />
-        <Routing />
+        {initialized && <Routing />}
       </div>
     </div>
   );

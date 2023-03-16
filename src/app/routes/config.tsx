@@ -1,15 +1,11 @@
 import { lazy } from 'react';
-import { type RouteProps } from 'react-router-dom';
 import { RouteNames, RoutePaths } from 'shared/config/routes';
+import { type AppRouteProps } from './types';
 
 const MainPage = lazy(() => import('pages/main'));
 const AboutPage = lazy(() => import('pages/about'));
 const ProfilePage = lazy(() => import('pages/profile'));
 const NotFoundPage = lazy(() => import('pages/not-found'));
-
-type AppRouteProps = RouteProps & {
-  authOnly?: boolean;
-};
 
 export const routes: AppRouteProps[] = [
   {
@@ -23,7 +19,7 @@ export const routes: AppRouteProps[] = [
   {
     path: RoutePaths[RouteNames.Profile],
     element: <ProfilePage />,
-    authOnly: true,
+    authRequired: true,
   },
   {
     path: RoutePaths[RouteNames.NotFound],
