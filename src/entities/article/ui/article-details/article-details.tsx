@@ -5,7 +5,7 @@ import {
   selectArticleDetailsError,
   selectArticleDetailsLoading,
 } from '../../model';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { clsx } from 'shared/utils/clsx';
 import {
@@ -13,6 +13,7 @@ import {
   useAsyncReducers,
   useAppDispatch,
   useAppSelector,
+  useInitialEffect,
 } from 'shared/utils/hooks';
 import { Text } from 'shared/ui/text';
 import cls from './article-details.module.scss';
@@ -47,11 +48,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   useAsyncReducers(asyncReducers);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      void dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    void dispatch(fetchArticleById(id));
+  });
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

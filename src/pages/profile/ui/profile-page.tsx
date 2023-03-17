@@ -10,10 +10,15 @@ import {
   selectProfileValidationErrors,
   ProfileValidationError,
 } from 'entities/profile';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { type Country } from 'shared/consts/country';
 import { type Currency } from 'shared/consts/currency';
-import { type AsyncReducersMap, useAsyncReducers, useAppDispatch } from 'shared/utils/hooks';
+import {
+  type AsyncReducersMap,
+  useAsyncReducers,
+  useAppDispatch,
+  useInitialEffect,
+} from 'shared/utils/hooks';
 import { useAppSelector } from 'shared/utils/hooks';
 import { Text } from 'shared/ui/text';
 import { ProfileHeader } from './profile-header/profile-header';
@@ -44,11 +49,9 @@ const ProfilePage = memo(() => {
 
   useAsyncReducers(asyncReducers);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      void dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    void dispatch(fetchProfileData());
+  });
 
   const changeFirstnameHandler = useCallback(
     (value: string) => {

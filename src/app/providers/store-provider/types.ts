@@ -14,11 +14,13 @@ import { type ProfileSchema } from 'entities/profile';
 import { type AxiosInstance } from 'axios';
 import { type NavigateFunction } from 'react-router-dom';
 import { type ArticleDetailsSchema } from 'entities/article';
+import { type ArticleDetailsCommentsSchema } from 'pages/article-details';
 
 export type AsyncStateSchema = {
   login?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
+  articleDetailsComments?: ArticleDetailsCommentsSchema;
 };
 
 export type AsyncStateSchemaKey = keyof AsyncStateSchema;
