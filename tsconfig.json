@@ -20,6 +20,6 @@
       "module": "CommonJS"
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/pages/profile/ui/profile.stories.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "src/pages/profile/ui/profile-page.stories.tsx"],
   "exclude": ["./node_modules", "./dist"]
 }

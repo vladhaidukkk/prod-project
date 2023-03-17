@@ -1,14 +1,14 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook';
 import { Themes } from 'shared/config/theme';
-import NotFoundPage from './not-found';
+import MainPage from './main-page';
 
 export default {
-  title: 'pages/NotFound',
-  component: NotFoundPage,
-} as ComponentMeta<typeof NotFoundPage>;
+  title: 'pages/MainPage',
+  component: MainPage,
+} as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage />;
+const Template: ComponentStory<typeof MainPage> = (args) => <MainPage />;
 
 export const Light = Template.bind({});
 

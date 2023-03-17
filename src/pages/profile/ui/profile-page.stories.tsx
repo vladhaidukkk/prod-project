@@ -4,10 +4,10 @@ import { Themes } from 'shared/config/theme';
 import { Country } from 'shared/consts/country';
 import { Currency } from 'shared/consts/currency';
 import AvatarImg from 'shared/assets/tests/avatar.jpg';
-import ProfilePage from './profile';
+import ProfilePage from './profile-page';
 
 export default {
-  title: 'pages/Profile',
+  title: 'pages/ProfilePage',
   component: ProfilePage,
   decorators: [
     StoreDecorator({

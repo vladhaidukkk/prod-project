@@ -10,14 +10,6 @@
   text-align: right;
 }
 
-.title {
-  font: var(--font-lg);
-}
-
-.description {
-  font: var(--font-base);
-}
-
 .primary {
   .title {
     color: var(--primary-color);
@@ -35,5 +27,25 @@
 
   .description {
     color: var(--red-dark-color);
+  }
+}
+
+.base {
+  .title {
+    font: var(--font-lg);
+  }
+
+  .description {
+    font: var(--font-base);
+  }
+}
+
+.lg {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .description {
+    font: var(--font-lg);
   }
 }

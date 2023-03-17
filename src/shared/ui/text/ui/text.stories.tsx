@@ -30,6 +30,13 @@ Error.args = {
   color: 'error',
 };
 
+export const Large = Template.bind({});
+Large.args = {
+  title: 'Title',
+  description: 'Description',
+  size: 'lg',
+};
+
 export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
   title: 'Title',

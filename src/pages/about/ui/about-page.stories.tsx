@@ -1,10 +1,10 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook';
 import { Themes } from 'shared/config/theme';
-import AboutPage from './about';
+import AboutPage from './about-page';
 
 export default {
-  title: 'pages/About',
+  title: 'pages/AboutPage',
   component: AboutPage,
 } as ComponentMeta<typeof AboutPage>;
 

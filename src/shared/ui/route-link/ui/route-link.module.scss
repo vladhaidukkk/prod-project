@@ -1,3 +1,9 @@
+.route-link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .primary {
   color: var(--primary-color);
 }

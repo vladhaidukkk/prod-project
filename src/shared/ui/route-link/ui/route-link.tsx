@@ -12,7 +12,7 @@ type RouteLinkProps = {
 export const RouteLink = memo(
   ({ className, variant = RouteLinkVariants.Primary, children, ...restProps }: RouteLinkProps) => {
     return (
-      <Link className={clsx('', {}, [className, cls[variant]])} {...restProps}>
+      <Link className={clsx(cls.routeLink, {}, [className, cls[variant]])} {...restProps}>
         {children}
       </Link>
     );

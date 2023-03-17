@@ -13,10 +13,12 @@ import { type LoginSchema } from 'features/auth-by-username';
 import { type ProfileSchema } from 'entities/profile';
 import { type AxiosInstance } from 'axios';
 import { type NavigateFunction } from 'react-router-dom';
+import { type ArticleDetailsSchema } from 'entities/article';
 
 export type AsyncStateSchema = {
   login?: LoginSchema;
   profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
 };
 
 export type AsyncStateSchemaKey = keyof AsyncStateSchema;
