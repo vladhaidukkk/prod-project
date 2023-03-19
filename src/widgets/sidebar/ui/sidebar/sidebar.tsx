@@ -3,7 +3,8 @@ import { ThemeSwitcher } from 'features/theme-switcher';
 import { memo, useState } from 'react';
 import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/utils/clsx';
-import { sidebarItems } from '../../consts';
+import { useAppSelector } from 'shared/utils/hooks';
+import { selectSidebarItems } from 'widgets/sidebar/model';
 import { SidebarItem } from '../sidebar-item/sidebar-item';
 import cls from './sidebar.module.scss';
 
@@ -12,6 +13,7 @@ type SidebarProps = {
 };
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
+  const sidebarItems = useAppSelector(selectSidebarItems);
   const [collapsed, setCollapsed] = useState(false);
 
   const handleToggle = () => {
