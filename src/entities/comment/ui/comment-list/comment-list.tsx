@@ -5,7 +5,6 @@ import { CommentCard } from '../comment-card/comment-card';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import cls from './comment-list.module.scss';
-import { CommentCardSkeleton } from '../comment-card/comment-card-skeleton';
 
 type CommentListProps = {
   className?: string;
@@ -19,9 +18,9 @@ export const CommentList = memo(({ className, comments, loading }: CommentListPr
   if (loading) {
     return (
       <div className={clsx(cls.commentList, {}, [className])}>
-        <CommentCardSkeleton />
-        <CommentCardSkeleton />
-        <CommentCardSkeleton />
+        <CommentCard loading />
+        <CommentCard loading />
+        <CommentCard loading />
       </div>
     );
   }
