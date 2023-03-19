@@ -7,9 +7,9 @@ import { selectProfileForm } from '../../selectors/select-profile-form/select-pr
 
 export const updateProfileData = createAsyncThunk<
   Profile,
-  void,
+  string,
   ThunkConfig<ProfileError | ProfileValidationError[]>
->('profile/updateProfileData', async (_arg, { rejectWithValue, extra, getState }) => {
+>('profile/updateProfileData', async (profileId, { rejectWithValue, extra, getState }) => {
   const formData = selectProfileForm(getState());
   const errors = validateProfileData(formData);
 
@@ -18,7 +18,7 @@ export const updateProfileData = createAsyncThunk<
   }
 
   try {
-    const { data } = await extra.api.put<Profile>('profile', formData);
+    const { data } = await extra.api.put<Profile>(`profiles/${profileId}`, formData);
     return data;
   } catch (err) {
     console.error(err);

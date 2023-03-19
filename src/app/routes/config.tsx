@@ -19,7 +19,7 @@ export const routes: AppRouteProps[] = [
     element: <AboutPage />,
   },
   {
-    path: RoutePaths[RouteNames.Profile],
+    path: RoutePaths[RouteNames.Profile] + ':id',
     element: <ProfilePage />,
     authRequired: true,
   },

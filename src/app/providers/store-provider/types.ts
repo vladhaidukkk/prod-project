@@ -15,12 +15,14 @@ import { type AxiosInstance } from 'axios';
 import { type NavigateFunction } from 'react-router-dom';
 import { type ArticleDetailsSchema } from 'entities/article';
 import { type ArticleDetailsCommentsSchema } from 'pages/article-details';
+import { type AddCommentSchema } from 'features/add-comment';
 
 export type AsyncStateSchema = {
   login?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
+  addComment?: AddCommentSchema;
 };
 
 export type AsyncStateSchemaKey = keyof AsyncStateSchema;

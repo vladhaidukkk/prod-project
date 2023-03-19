@@ -65,52 +65,52 @@ export const ProfileCard = ({
     );
   }
 
-  return (
+  return data ? (
     <div className={clsx(cls.profileCard, { [cls.editing]: !readonly }, [className])}>
-      {data?.avatar && (
+      {data.avatar && (
         <div className={cls.avatarWrapper}>
           <Avatar src={data.avatar} />
         </div>
       )}
       <Input
-        value={data?.first}
+        value={data.first}
         placeholder={t('Your name')}
         readOnly={readonly}
         onChange={onChangeFirstname}
       />
       <Input
-        value={data?.lastname}
+        value={data.lastname}
         placeholder={t('Your surname')}
         readOnly={readonly}
         onChange={onChangeLastname}
       />
       <Input
         type="number"
-        value={data?.age}
+        value={data.age}
         placeholder={t('Your age')}
         readOnly={readonly}
         onChange={onChangeAge}
       />
       <Input
-        value={data?.city}
+        value={data.city}
         placeholder={t('Your city')}
         readOnly={readonly}
         onChange={onChangeCity}
       />
       <Input
-        value={data?.username}
+        value={data.username}
         placeholder={t('Your username')}
         readOnly={readonly}
         onChange={onChangeUsername}
       />
       <Input
-        value={data?.avatar}
+        value={data.avatar}
         placeholder={t('Your avatar')}
         readOnly={readonly}
         onChange={onChangeAvatar}
       />
-      <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
-      <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
+      <CurrencySelect value={data.currency} onChange={onChangeCurrency} readonly={readonly} />
+      <CountrySelect value={data.country} onChange={onChangeCountry} readonly={readonly} />
     </div>
-  );
+  ) : null;
 };

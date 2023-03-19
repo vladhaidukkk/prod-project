@@ -4,4 +4,4 @@ export {
   selectArticleDetailsData,
   selectArticleDetailsLoading,
   selectArticleDetailsError,
-} from './article-details-selectors';
+} from './selectors/article-details-selectors';

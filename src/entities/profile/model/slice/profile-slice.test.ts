@@ -90,7 +90,7 @@ describe('(Reducer): profileReducer', () => {
       age: 20,
     };
     expect(
-      profileReducer(profileState as ProfileSchema, fetchProfileData.fulfilled(profileData, ''))
+      profileReducer(profileState as ProfileSchema, fetchProfileData.fulfilled(profileData, '', ''))
     ).toEqual({
       data: profileData,
       form: profileData,

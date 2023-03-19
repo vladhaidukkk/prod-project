@@ -7,6 +7,7 @@ import { updateProfileData } from './update-profile-data';
 
 describe('(Async action): updateProfileData', () => {
   const profileData: Profile = {
+    id: '1',
     first: 'name',
     lastname: 'surname',
     age: 20,
@@ -24,7 +25,7 @@ describe('(Async action): updateProfileData', () => {
       },
     });
     thunk.api.put.mockResolvedValueOnce({ data: profileData });
-    const result = await thunk.exec();
+    const result = await thunk.exec('');
 
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -39,7 +40,7 @@ describe('(Async action): updateProfileData', () => {
       },
     });
     thunk.api.put.mockRejectedValueOnce({ status: 403 });
-    const result = await thunk.exec();
+    const result = await thunk.exec('');
 
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
@@ -54,7 +55,7 @@ describe('(Async action): updateProfileData', () => {
       },
     });
     thunk.api.put.mockRejectedValueOnce({ status: 403 });
-    const result = await thunk.exec();
+    const result = await thunk.exec('');
 
     expect(thunk.api.put).not.toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

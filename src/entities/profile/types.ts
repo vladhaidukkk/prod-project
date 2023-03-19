@@ -3,6 +3,7 @@ import { type Currency } from 'shared/consts/currency';
 import { type ProfileValidationError, type ProfileError } from './consts';
 
 export type Profile = {
+  id?: string;
   first?: string;
   lastname?: string;
   age?: number;

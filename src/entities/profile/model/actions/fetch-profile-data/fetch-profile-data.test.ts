@@ -20,7 +20,7 @@ describe('(Async action): fetchProfileData', () => {
 
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockResolvedValueOnce({ data: profileData });
-    const result = await thunk.exec();
+    const result = await thunk.exec('');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -31,7 +31,7 @@ describe('(Async action): fetchProfileData', () => {
   test('should be rejected', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockRejectedValueOnce({ status: 403 });
-    const result = await thunk.exec();
+    const result = await thunk.exec('');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

@@ -1,6 +1,7 @@
 import { ArticleDetails } from 'entities/article';
 import { CommentList } from 'entities/comment';
-import { memo } from 'react';
+import { AddCommentForm } from 'features/add-comment';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/text';
@@ -16,6 +17,7 @@ import {
   fetchCommentsByArticleId,
   selectArticleComments,
   selectArticleCommentsLoading,
+  sendCommentForArticle,
 } from '../model';
 import cls from './article-details-page.module.scss';
 
@@ -39,6 +41,13 @@ const ArticleDetailsPage = memo(() => {
     void dispatch(fetchCommentsByArticleId(id));
   });
 
+  const sendCommentHandler = useCallback(
+    (text: string) => {
+      void dispatch(sendCommentForArticle(text));
+    },
+    [dispatch]
+  );
+
   if (!id) {
     return <div>{t('Article is not found')}</div>;
   }
@@ -47,7 +56,8 @@ const ArticleDetailsPage = memo(() => {
     <div>
       <ArticleDetails id={id} />
       <Text className={cls.commentsTitle} title={t('Comments')} />
-      <CommentList loading={commentsLoading} comments={comments} />
+      <AddCommentForm className={cls.addCommentForm} onSendComment={sendCommentHandler} />
+      <CommentList className={cls.commentList} loading={commentsLoading} comments={comments} />
     </div>
   );
 });

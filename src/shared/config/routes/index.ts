@@ -10,8 +10,8 @@ export const enum RouteNames {
 export const RoutePaths: Record<RouteNames, string> = {
   [RouteNames.Main]: '/',
   [RouteNames.About]: '/about',
-  [RouteNames.Profile]: '/profile',
+  [RouteNames.Profile]: '/profile/', // :id
   [RouteNames.Articles]: '/articles',
-  [RouteNames.ArticleDetails]: '/articles/',
+  [RouteNames.ArticleDetails]: '/articles/', // :id
   [RouteNames.NotFound]: '*',
 };

@@ -23,6 +23,7 @@ import { useAppSelector } from 'shared/utils/hooks';
 import { Text } from 'shared/ui/text';
 import { ProfileHeader } from './profile-header/profile-header';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 const asyncReducers: AsyncReducersMap = {
   profile: {
@@ -33,6 +34,7 @@ const asyncReducers: AsyncReducersMap = {
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const formData = useAppSelector(selectProfileForm);
   const loading = useAppSelector(selectProfileLoading);
@@ -50,7 +52,9 @@ const ProfilePage = memo(() => {
   useAsyncReducers(asyncReducers);
 
   useInitialEffect(() => {
-    void dispatch(fetchProfileData());
+    if (id) {
+      void dispatch(fetchProfileData(id));
+    }
   });
 
   const changeFirstnameHandler = useCallback(
