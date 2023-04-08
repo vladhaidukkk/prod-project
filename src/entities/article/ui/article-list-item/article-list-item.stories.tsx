@@ -87,12 +87,12 @@ const article = {
 
 export const Big = Template.bind({});
 Big.args = {
-  view: 'tile',
+  view: 'list',
   article,
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  view: 'list',
+  view: 'tile',
   article,
 };

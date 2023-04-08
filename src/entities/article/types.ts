@@ -54,4 +54,4 @@ export type ArticleDetailsSchema = {
   error?: string;
 };
 
-export type ArticleView = 'tile' | 'list';
+export type ArticleView = 'list' | 'tile';

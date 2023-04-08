@@ -16,6 +16,7 @@ import { type NavigateFunction } from 'react-router-dom';
 import { type ArticleDetailsSchema } from 'entities/article';
 import { type ArticleDetailsCommentsSchema } from 'pages/article-details';
 import { type AddCommentSchema } from 'features/add-comment';
+import { type ArticlesPageSchema } from 'pages/articles';
 
 export type AsyncStateSchema = {
   login?: LoginSchema;
@@ -23,6 +24,7 @@ export type AsyncStateSchema = {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   addComment?: AddCommentSchema;
+  articlesPage?: ArticlesPageSchema;
 };
 
 export type AsyncStateSchemaKey = keyof AsyncStateSchema;
