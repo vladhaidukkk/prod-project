@@ -1,3 +1,5 @@
+import { type Viewer } from 'entities/auth';
+
 export const enum ArticleType {
   IT = 'IT',
   Science = 'SCIENCE',
@@ -38,6 +40,7 @@ export type Article = {
   id: string;
   title: string;
   subtitle: string;
+  user: Viewer;
   img: string;
   views: number;
   createdAt: string;
@@ -50,3 +53,5 @@ export type ArticleDetailsSchema = {
   loading: boolean;
   error?: string;
 };
+
+export type ArticleView = 'tile' | 'list';

@@ -1,10 +1,12 @@
+import { ArticleList } from 'entities/article';
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 const ArticlesPage = memo(() => {
-  const { t } = useTranslation('articles');
-
-  return <div>{t('Articles List')}</div>;
+  return (
+    <div>
+      <ArticleList view="list" articles={[]} loading />
+    </div>
+  );
 });
 
 export default ArticlesPage;
